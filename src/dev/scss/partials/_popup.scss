@@ -1,0 +1,82 @@
+.almo-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(238, 238, 238, 0.7);
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+
+  &--no-overlay {
+    border-radius: 12px;
+    bottom: auto;
+    left: auto;
+    padding: 0;
+
+    @include respond-to-max($small) {
+      border-radius: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: fixed;
+      padding: 14px;
+    }
+  }
+
+  &.js-opened {
+    display: flex;
+    pointer-events: auto;
+    animation: popupShow .25s ease-in-out forwards;
+  }
+
+  &.js-fullscreen {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  &__cont {
+    min-width: 290px;
+    // min-height: 290px;
+    position: relative;
+
+    &__close-btn {
+      position: absolute;
+      top: 0.7em;
+      right: 0.7em;
+    }
+  }
+
+  &__audio,
+  &__video,
+  &__youtube {
+    display: none;
+
+    &.is-opened {
+      display: block;
+      @include respond-to-max($small) {
+        max-width: 100%;
+      }
+    }
+  }
+  &__video,
+  &__youtube {
+    @include respond-to-max($tiny) {
+      height: 250px;
+    }
+  }
+}
+
+@keyframes popupShow {
+  100% {
+    opacity: 1;
+  }
+}
+

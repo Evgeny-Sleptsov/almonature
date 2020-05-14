@@ -1,0 +1,209 @@
+@mixin respond-to-max($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin respond-from-min($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin height-to-max($media) {
+  @media only screen and (max-height: $media) {
+    @content;
+  }
+}
+
+@mixin height-from-min($media) {
+  @media only screen and (min-height: $media) {
+    @content;
+  }
+}
+
+@mixin removeEdge {
+  margin-left: calc(var(--edge-gap) * -1);
+  margin-right: calc(var(--edge-gap) * -1);
+  width: auto;
+}
+
+@mixin headings {
+  h1, h2, h3,
+  h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin margin-text {
+  & + p {
+    margin-top: 0.65em;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &[placeholder] {
+    text-overflow: ellipsis;
+  }
+  &::-moz-placeholder {
+    text-overflow: ellipsis;
+  }
+  &:-moz-placeholder {
+    text-overflow: ellipsis;
+  }
+  &:-ms-input-placeholder {
+    text-overflow: ellipsis;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  &:-ms-input-placeholder {
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  &:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  &:focus::-moz-placeholder {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  &:focus:-moz-placeholder {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  &:focus:-ms-input-placeholder {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+}
+
+@mixin scroll-bar($width, $color-track) {
+  &::-webkit-scrollbar {
+    border-radius: $width / 2.5;
+    width: $width;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: $width / 2.5;
+    background-color: $color-track;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: $width / 2.5;
+    background-color: darken($color-track, 30%);
+  }
+}
+
+@mixin hint {
+  position: relative;
+  @content;
+
+  &:before,
+  &:after {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: attr(data-hint-title);
+  }
+  &:before {
+    display: block;
+    content: '';
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@mixin hoverDesktop() {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin hoverMobile() {
+  @media (hover: none), (hover: hover) and (pointer: coarse) {
+    @content;
+  }
+}

@@ -1,0 +1,236 @@
+<div class="almo-popup" id="quiz-pupop">
+    <div class="almo-box almo-popup__cont">
+      <button class="almo-close-btn almo-popup__cont__close-btn  js-close-popup-btn"></button>
+  
+      <form class="almo-quiz__more">
+        <div class="almo-quiz__mob-head">
+          <i class="almo-icon bg-almo"></i>
+          <button type="button" class="almo-close-btn almo-quiz__mob-head__close">
+          </button>
+        </div>
+        <div class="almo-quiz__more__inner">
+          <p class="almo-text-lead">Welcome to the community!</p>
+          <p class="almo-text-reg">
+            Our first email is already on its way. Hope you'll like it.
+          </p>
+  
+          <p class="almo-text-lead">One more thing</p>
+          <p class="almo-text-reg">
+            We'd be happy to know a bit more about you — to show you more relevant
+            information. Please, answer a few simple questions:
+          </p>
+  
+          <div class="almo-quiz__more__steps">
+            <ul class="almo-quiz__more__steps__list">
+              <li class="almo-quiz__more__steps__list__item">
+                <div class="almo-quiz__more__steps__step">
+                  <input type="radio" name="quiz-more" checked data-target="quiz-more-anim" />
+                  <span></span>
+                </div>
+              </li>
+              <li class="almo-quiz__more__steps__list__item">
+                <div class="almo-quiz__more__steps__step">
+                  <input type="radio" name="quiz-more" data-target="quiz-more-years" />
+                  <span></span>
+                </div>
+              </li>
+              <li class="almo-quiz__more__steps__list__item">
+                <div class="almo-quiz__more__steps__step">
+                  <input type="radio" name="quiz-more" data-target="quiz-more-done" />
+                  <span></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="almo-quiz__more__anim js-showed" id="quiz-more-anim">
+            <div class="almo-quiz__more__block">
+              <h3 class="almo-head-h3">What animal companion(s) do you have?</h3>
+              <ul class="almo-quiz__more__anim__list">
+                <li class="almo-quiz__more__anim__list__item">
+                  <label class="almo-quiz__more__anim__cart">
+                    <input type="checkbox" value="cat" /> <span></span>
+                    <p class="almo-quiz__more__anim__cart__icon">
+                      <i class="almo-icon bg-cat"></i>
+                    </p>
+                    <p class="almo-text-reg almo-quiz__more__anim__cart__text">
+                      Cat
+                    </p>
+                  </label>
+                </li>
+  
+                <li class="almo-quiz__more__anim__list__item">
+                  <label class="almo-quiz__more__anim__cart">
+                    <input type="checkbox" value="dog" /> <span></span>
+                    <p class="almo-quiz__more__anim__cart__icon">
+                      <i class="almo-icon bg-dog"></i>
+                    </p>
+                    <p class="almo-text-reg almo-quiz__more__anim__cart__text">
+                      Dog
+                    </p>
+                  </label>
+                </li>
+  
+                <li class="almo-quiz__more__anim__list__item">
+                  <label class="almo-quiz__more__anim__cart">
+                    <input type="checkbox" value="another" /> <span></span>
+                    <p class="almo-quiz__more__anim__cart__icon">
+                      <i class="almo-icon bg-main-fish"></i>
+                    </p>
+                    <p class="almo-text-reg almo-quiz__more__anim__cart__text">
+                      Another cute animal
+                    </p>
+                  </label>
+                </li>
+  
+                <li class="almo-quiz__more__anim__list__item">
+                  <label class="almo-quiz__more__anim__cart">
+                    <input type="checkbox" value="no" /> <span></span>
+                    <p class="almo-quiz__more__anim__cart__icon">
+                      <i class="almo-icon bg-main-care"></i>
+                    </p>
+                    <p class="almo-text-reg almo-quiz__more__anim__cart__text">
+                      I don't have animals, I just care
+                    </p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+  
+            <button type="button" class="almo-btn" disabled>
+              <span>Next</span>
+            </button>
+          </div>
+  
+          <div class="almo-quiz__more__years" id="quiz-more-years">
+            <div class="almo-quiz__more__block">
+              <h3 class="almo-head-h3">How old are your animal companions?</h3>
+              <ul class="almo-quiz__more__years__list">
+                <template>
+                  <li data-anim="@@anim" data-index="@@index">
+                    <label>
+                      <input class="almo-input-text" type="number" placeholder=" " data-type="years" />
+                      <span class="almo-text-reg">years</span>
+                    </label>
+  
+                    <label>
+                      <input class="almo-input-text" type="number" placeholder=" " data-type="month" />
+                      <span class="almo-text-reg">month(s)</span>
+                    </label>
+                  </li>
+                </template>
+                <li class="almo-quiz__more__years__list__item almo-quiz__more__years__list__item--dog">
+                  <div class="almo-quiz__more__years__list__item__l">
+                    <span class="almo-head-h5">Dog</span>
+                    <ul class="almo-quiz__more__years__list__item__inputs">
+                      <li data-anim="dog" data-index="1">
+                        <label>
+                          <input class="almo-input-text" type="number" placeholder=" " data-type="years" />
+                          <span class="almo-text-reg">years</span>
+                        </label>
+  
+                        <label>
+                          <input class="almo-input-text" type="number" placeholder=" " data-type="month" />
+                          <span class="almo-text-reg">month(s)</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="almo-link almo-link--plus" type="button" data-anim="dog">
+                    <i></i> one more dog
+                  </button>
+                </li>
+                <li class="almo-quiz__more__years__list__item almo-quiz__more__years__list__item--cat">
+                  <div class="almo-quiz__more__years__list__item__l">
+                    <span class="almo-head-h5">Cat</span>
+                    <ul class="almo-quiz__more__years__list__item__inputs">
+                      <li data-anim="cat" data-index="1">
+                        <label>
+                          <input class="almo-input-text" type="number" placeholder=" " data-type="years" />
+                          <span class="almo-text-reg">years</span>
+                        </label>
+  
+                        <label>
+                          <input class="almo-input-text" type="number" placeholder=" " data-type="month" />
+                          <span class="almo-text-reg">month(s)</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+  
+                  <button class="almo-link almo-link--plus" type="button" data-anim="cat">
+                    <i></i> one more cat
+                  </button>
+                </li>
+              </ul>
+            </div>
+  
+            <button type="button" class="almo-btn" disabled>
+              <span>Next</span>
+            </button>
+          </div>
+  
+          <div class="almo-quiz__more__country" id="quiz-more-country">
+            <div class="almo-quiz__more__block">
+              <h3 class="almo-head-h3">What area do you live in?</h3>
+              <input type="text" class="almo-input-text" placeholder="Just put your zip code here" />
+            </div>
+  
+            <button class="almo-btn" type="submit" disabled>
+              <span>That's it</span>
+            </button>
+          </div>
+        </div>
+  
+      </form>
+  
+      <div class="almo-quiz__done">
+        <div class="almo-quiz__mob-head">
+          <i class="almo-icon bg-almo"></i>
+          <button type="button" class="almo-close-btn almo-quiz__mob-head__close">
+          </button>
+        </div>
+        <div class="almo-quiz__done__inner">
+          <div class="almo-quiz__done__inner__head almo-quiz__done--cat-dog">
+            <i class="almo-icon bg-cat-dog"></i>
+            <p class="almo-text-lead">
+              <span>Ooh, you have a cat and a dog!</span>
+              <span>God, we like you already :)</span>
+            </p>
+          </div>
+  
+          <div class="almo-quiz__done__inner__head almo-quiz__done--cat">
+            <i class="almo-icon bg-cat"></i>
+            <p class="almo-text-lead">
+              <span>Thanks for joining!</span>
+              <span>And say hi to your cat from us :)</span>
+            </p>
+          </div>
+  
+          <div class="almo-quiz__done__inner__head almo-quiz__done--dog">
+            <i class="almo-icon bg-dog"></i>
+            <p class="almo-text-lead">
+              <span>Thanks for joining!</span>
+              <span>And say hi to your dog from us :)</span>
+            </p>
+          </div>
+  
+          <div class="almo-quiz__done__inner__head almo-quiz__done--other">
+            <i class="almo-icon bg-paw"></i>
+            <p class="almo-text-lead">
+              <span>Hey, it's so cool to have you here with us :)</span>
+              <span>Thanks for joining!</span>
+            </p>
+          </div>
+  
+          <p class="almo-text-reg">
+            Please, if you have any kind of feedback about Almo Nature products for
+            cats or dogs (or both!), or about the projects of Capellino Foundation,
+            <a href="#" class="almo-link">share it with us</a> — we are always
+            excited about talking to people who care. Hope to see you here again
+            soon!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

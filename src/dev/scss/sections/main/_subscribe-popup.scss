@@ -1,0 +1,104 @@
+@import '../../common/mixins.scss';
+@import '../../common/scss-variables.scss';
+
+.almo-subscr {
+  &__email {
+    width: 100%;
+    max-width: 420px;
+
+    &.js-use-email {
+      .almo-subscr--use-soc {
+        display: none;
+      }
+
+      .almo-subscr--use-email {
+        display: block;
+      }
+    }
+
+    &.js-use-soc {
+      .almo-subscr--use-soc {
+        display: block;
+      }
+
+      .almo-subscr--use-email {
+        display: none;
+      }
+    }
+
+    &--hidden-block {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .5s;
+
+     
+      // @include respond-to-max($tiny) {
+      //   max-height: initial;
+      //   overflow: initial;
+      // }
+    }
+
+    &>.almo-head-h3 {
+      padding-bottom: 8px;
+    }
+
+    &>.almo-text-reg {
+      padding-bottom: 0.875em;
+    }
+
+    &__email-set {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-line);
+      margin-bottom: 20px;
+    }
+
+    &__checks {
+      &>ul {
+        padding-bottom: 12px;
+
+        &>li {
+          display: flex;
+          padding: 8px 0;
+
+          .almo-checkbox {
+            margin-right: 10px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .almo-btn {
+      width: 100%;
+      max-width: 100% !important;
+    }
+
+    &__undbtn {
+      padding-top: 12px;
+      opacity: .5;
+    }
+  }
+
+  &__soc {
+    padding: 0 55px 20px;
+
+    @include respond-to-max($tiny) {
+      padding: 0;
+    }
+
+    .almo-head-h3 {
+      padding-bottom: 1.2em;
+    }
+
+    .almo-btn.almo-btn--soc {
+      display: flex;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

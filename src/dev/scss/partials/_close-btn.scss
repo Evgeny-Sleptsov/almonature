@@ -1,0 +1,35 @@
+.almo-close-btn {
+  font-size: 16px;
+  display: block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  color: #AAAAAA;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    width: 0.1em;
+    background-color: currentColor;
+    left: calc(50% - 0.025em);
+    border-radius: 1em;
+    transition: color .2s;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    color: var(--red);
+  }
+}

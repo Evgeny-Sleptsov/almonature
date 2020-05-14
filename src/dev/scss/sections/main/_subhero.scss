@@ -1,0 +1,74 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-subhero-sec {
+  padding-bottom: 40px;
+  margin-top: -100px;
+  overflow: hidden;
+  width: 100%;
+
+  @include respond-to-max($heroToTablet) {
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.almo-main-subhero {
+  &.js-hidden {
+    @include respond-from-min($small) {
+      h2 {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      ul li {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    }
+  }
+
+  .almo-editable {
+    h2 {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 1.5em;
+      max-width: 500px;
+      padding-bottom: .625em;
+      transition: opacity 1s, transform .8s .2s;
+
+      @include fluid-type($extratiny, $small, 18px, 32px);
+    }
+
+    ul {
+      @extend %row;
+
+      li {
+        @extend %col-tn-4;
+        @extend %col-xs-12;
+
+        transition: opacity 1s .25s, transform .8s .35s;
+
+        @include respond-to-max($small) {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+
+        @include respond-to-max(650px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        h3 {
+          @extend %almo-head-h3;
+          padding-bottom: 12px;
+          color: var(--red);
+        }
+
+        p {
+          @extend %almo-text-reg;
+        }
+      }
+    }
+  }
+}

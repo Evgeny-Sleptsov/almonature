@@ -1,0 +1,92 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-activ-sec {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #FFF6E8;
+  overflow: hidden;
+  width: 100%;
+
+  @include respond-to-max($small) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.almo-main-activ {
+  &.js-hidden {
+    .almo-news-cards__list li {
+      opacity: 0;
+    }
+  }
+
+  .almo-slider {
+    @include respond-from-min($tiny + 1px) {
+      overflow: initial;
+    }
+  }
+
+  &>.almo-head-h3 {
+    padding-bottom: .7em;
+
+    @include respond-to-max($tiny) {
+      padding-bottom: 8px;
+    }
+  }
+
+  .almo-main__slider.swiper-container {
+    overflow: initial;
+
+    @include respond-to-max($tiny) {
+      overflow: hidden;
+      margin: 0 calc(var(--edge-gap) * -1);
+    }
+  }
+
+  .slider-pagination--main {
+    display: none;
+
+    @include respond-to-max($tiny) {
+      display: flex;
+    }
+  }
+
+  .almo-news-cards__list {
+    @extend %row;
+
+    @include respond-to-max($tiny) {
+      margin: 0 !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+    }
+
+    li {
+      @extend %col-md-4;
+      @extend %col-tn-6;
+      @extend %col-xs-12;
+
+      height: auto;
+
+      transition: opacity 1s;
+
+      @include respond-to-max($tiny) {
+        padding-top: calc(var(--col-step) / 2);
+        padding-bottom: calc(var(--col-step) / 2);
+      }
+
+      &:nth-child(4) {
+        display: none;
+
+        @include respond-to-max($medium) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    text-align: center;
+    padding-top: 4px;
+  }
+}

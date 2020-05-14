@@ -1,0 +1,58 @@
+.almo-app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 110px);
+}
+.app-title-wrapper {
+  background-color: #f7f7f7;
+  .App__topper {
+    padding-top: 34px;
+    padding-bottom: 20px;
+    @media screen and (max-width: 767px) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  .App__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #303030;
+    font-weight: 700;
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+    }
+  }
+  .App__subtitle {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #235863;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+.container {
+  max-width: 1085px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media only screen and (min-width: 1600px) {
+    width: 1125px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1125px;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 930px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 720px;
+  }
+  @media only screen and (min-width: 576px) {
+    width: 540px;
+  }
+
+}

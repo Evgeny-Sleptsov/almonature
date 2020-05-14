@@ -1,0 +1,222 @@
+<div class="almo-header-mob">
+  <div class="almo-wrap almo-header-mob__main">
+    <div class="almo-header-mob__back js-back">
+      <svg
+        width="24"
+        height="24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 5l-7 6.5 7 6.5"
+          stroke="#000"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <p>
+      <a href="#">
+        <i class="almo-icon bg-almo"></i>
+      </a>
+    </p>
+
+    <div class="almo-header-mob__burger js-burger">
+      <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80">
+        <path
+          class="line top"
+          d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+        />
+        <path class="line middle" d="m 30,50 h 40" />
+        <path
+          class="line bottom"
+          d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+        />
+      </svg>
+    </div>
+
+    <nav class="almo-header-mob__nav almo-header-mob__panel js-mob-nav">
+      <ul class="almo-header-mob__nav__links">
+        <li>
+          <a href="#">Cat products</a>
+        </li>
+        <li>
+          <a href="#">Dog products</a>
+        </li>
+        <li class="js-accor-item">
+          <button class="js-accor-btn" type="button">Movement</button>
+          <ul class="js-accor-target">
+            <li>
+              <a href="#">A new pact with animals</a>
+            </li>
+            <li>
+              <a href="#ecosystem">Ecosystem as a goal</a>
+            </li>
+            <li>
+              <a href="#how-it-works">Pet food as a fuel</a>
+            </li>
+            <li>
+              <a href="#how-you-can-help">How you can help</a>
+            </li>
+          </ul>
+        </li>
+        <li class="js-accor-item">
+          <button class="js-accor-btn" type="button">Projects</button>
+          <ul class="js-accor-target">
+            <li>
+              <a href="#">A Companion Animal Is For Life</a>
+            </li>
+            <li>
+              <a href="#">Farmers & Predators</a>
+            </li>
+            <li>
+              <a href="#">Dog Blood Bank</a>
+            </li>
+            <li>
+              <a href="#">Regenerating Villa Fortuna</a>
+            </li>
+          </ul>
+        </li>
+        <li class="js-accor-item">
+          <button class="js-accor-btn" type="button">About us</button>
+          <ul class="js-accor-target">
+            <li>
+              <a href="#">Almo Nature</a>
+            </li>
+            <li>
+              <a href="#">Capellino Fundation</a>
+            </li>
+            <li>
+              <a href="#">All activity</a>
+            </li>
+            <li>
+              <a href="#">They write about us</a>
+            </li>
+            <li>
+              <a href="#">Wall of supporters</a>
+            </li>
+            <li>
+              <a href="#">Friends and partners</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="almo-header-mob__nav__btns">
+        <li>
+          <button
+            type="button"
+            class="almo-header-mob__nav__btns__sign js-open-subpopup"
+            data-submenu="submenu-sign"
+          >
+            <i class="almo-icon bg-sign-in"></i>
+            Sign in
+          </button>
+        </li>
+        <li>
+          <button type="button" class="almo-header-mob__nav__btns__ava">
+            <span class="almo-icon almo-header-mob__nav__btns__ava__img">
+              <img src="#" alt="" />
+            </span>
+            <span class="almo-header-mob__nav__btns__ava__text"
+              >Kristina Stoyanova</span
+            >
+          </button>
+        </li>
+        <li>
+          <a href="#">
+            <i class="almo-icon bg-paw"></i>
+            Partner area
+          </a>
+        </li>
+        <li>
+          <button type="button" class="almo-header-mob__nav__btns__find">
+            <i class="almo-icon bg-search"></i>
+            Find a store
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="almo-header-mob__nav__btns__country js-open-subpopup"
+            data-submenu="submenu-country"
+          >
+            <i class="almo-icon bg-it"></i>
+            Italy
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="almo-header-mob__nav__btns__lang js-open-subpopup"
+            data-submenu="submenu-lang"
+          >
+            <i class="almo-icon bg-lang"></i>
+            EN
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="almo-header-mob__lang almo-header-mob__panel" id="submenu-lang">
+      <div class="almo-header-mob__panel__inner">
+        @@include("./_lang-list.html")
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__country almo-header-mob__panel"
+      id="submenu-country"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include("./_search-country.html")
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__sign-in almo-header-mob__panel"
+      id="submenu-sign"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include("./_sign-mob.html")
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__reset-pass almo-header-mob__panel"
+      id="submenu-reset-pass"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include('./_reset-pass-mob.html')
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__reset-pass almo-header-mob__panel"
+      id="submenu-change-temp-pass"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include('./_change-temp-pass-mob.html')
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__new-pass almo-header-mob__panel"
+      id="submenu-new-pass"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include('./_new-pass-mob.html')
+      </div>
+    </div>
+
+    <div
+      class="almo-header-mob__pass-reseted almo-header-mob__panel"
+      id="submenu-pass-reseted"
+    >
+      <div class="almo-header-mob__panel__inner">
+        @@include('./_pass-reseted-mob.html')
+      </div>
+    </div>
+  </div>
+</div>

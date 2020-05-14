@@ -1,0 +1,76 @@
+.almo-cutaway {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100%;
+  width: 358px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid #E4E4E4;
+  border-radius: 12px;
+
+  @include respond-from-min($small) {
+    flex-direction: column;
+    margin-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__photo-wrap {
+    width: 56px;
+    height: 56px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include respond-from-min($small) {
+      width: 88px;
+      height: 88px;
+      margin-bottom: 8px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #303030;
+  }
+
+  &__footer {
+    width: 100%;
+    padding-top: 12px;
+    text-align: left;
+
+    @include respond-from-min($small) {
+      padding-top: 20px;
+    }
+  }
+
+  &__link-wrap:not(:last-child) {
+    margin-bottom: 3px;
+  }
+
+  &__link {
+    .almo-icon {
+      margin-right: 7px;
+
+      @include respond-from-min($small) {
+        margin-right: 15px;
+      }
+    }
+  }
+}

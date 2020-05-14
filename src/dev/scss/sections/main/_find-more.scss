@@ -1,0 +1,58 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-find-sec {
+  padding-top: 80px;
+  // padding-bottom: 80px;
+
+  @include respond-to-max($small) {
+    padding-top: 50px;
+    // padding-bottom: 50px;
+  }
+}
+
+.almo-main-find {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__l {
+    flex: 0 0 calc(100%/12 * 7);
+    max-width: calc(100%/12 * 7);
+
+    @include respond-to-max($small) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .almo-text-lead {
+      padding-bottom: 1.2em;
+    }
+  }
+
+  &__r {
+    flex: 0 0 calc(100%/12 * 5);
+    max-width: calc(100%/12 * 5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 30px;
+
+    @include respond-to-max($small) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: -1;
+      padding-bottom: 30px;
+      padding-left: 0;
+      justify-content: flex-start;
+    }
+
+    .bg-fondazione {
+      font-size: 48.8px;
+      display: block;
+
+      @include respond-to-max($small) {
+        font-size: 43px;
+      }
+    }
+  }
+}

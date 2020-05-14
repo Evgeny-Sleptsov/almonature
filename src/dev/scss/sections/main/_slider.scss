@@ -1,0 +1,11 @@
+.slider-pagination {
+  &--main {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    .swiper-pagination-bullet {
+      background: var(--red);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.almo-footer {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: var(--gray-popup);
+
+  @include respond-to-max($tiny) {
+    padding-bottom: 40px;
+  }
+
+  &__logos {
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+
+    @include respond-to-max($tiny) {
+      display: block;
+      padding-bottom: 30px;
+
+      .almo-icon {
+        display: block;
+        margin: 0 auto;
+
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .bg-almo {
+      width: 120px;
+      height: 55px;
+      margin-right: 40px;
+    }
+
+    .bg-fondazione {
+      width: 160px;
+      height: 35px;
+    }
+  }
+
+  &__links {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-to-max(900px) {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        padding: 10px;
+
+        &.js-accor-item.show {
+          .js-accor-btn > p::after {
+            opacity: .6;
+            transform: rotate(180deg);
+          }
+        }
+
+        @include respond-to-max(900px) {
+          flex: 0 0 33.33333%;
+
+          &:nth-of-type(4) {
+            flex: 0 0 66.6666666%;
+            columns: 2;
+          }
+        }
+
+        @include respond-to-max($tiny) {
+          flex: 0 0 100%;
+          text-align: center;
+
+          &:nth-of-type(4) {
+            flex: 0 0 100%;
+            columns: 1;
+          }
+
+          &:not(:last-of-type) {
+            border-bottom: 1px solid rgba(#3D3D3D, .05);
+          }
+
+          &>div {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &>p::after {
+              content: '';
+              display: inline-block;
+              vertical-align: middle;
+              margin-left: 15px;
+              width: 15px;
+              height: 10px;
+              pointer-events: none;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L7 7 1 1' stroke='%23235863' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+              transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+            }
+          }
+        }
+
+        .almo-head-h5 {
+          padding-bottom: 8px;
+
+          @include respond-to-max($tiny) {
+            padding-bottom: 0;
+          }
+        }
+
+        &>ul:not(.almo-soc) {
+          @include respond-to-max($tiny) {
+            max-height: 0;
+            transition: max-height .25s ease-in-out;
+            overflow: hidden;
+          }
+        }
+
+        &>ul:not(.almo-soc)>li {
+          padding: 8px 0;
+
+          a {
+            font-size: inherit;
+            font-weight: inherit;
+            transition: opacity .25s ease-in-out;
+
+            &:hover {
+              opacity: .6;
+            }
+          }
+        }
+
+        .almo-soc {
+          padding-top: 18px;
+
+          @include respond-to-max($tiny) {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

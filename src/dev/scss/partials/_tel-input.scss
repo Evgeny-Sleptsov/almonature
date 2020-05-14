@@ -1,0 +1,77 @@
+.intl-tel-input {
+  width: 100%;
+
+  @include respond-to-max($small) {
+    // z-index: 0;
+  }
+
+  @include respond-to-max($tiny) {
+    width: auto;
+  }
+
+  &.separate-dial-code .selected-flag {
+    background-color: initial !important;
+    outline: none !important;
+  }
+
+  .selected-flag {
+    border-right: 1px solid var(--gray-bg);
+
+    .iti-arrow {
+      width: 10px !important;
+      height: 5px !important;
+      border: none !important;
+      background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.3' d='M1 1.5l5 5 5-5' stroke='%23303030' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  input {
+    padding-left: 100px !important;
+
+    @include placeholder {
+      color: var(--gray-line);
+    }
+  }
+
+  .selected-dial-code {
+    font-size: 14px;
+  }
+}
+
+
+
+.flag-container {
+  width: 90px;
+  z-index: 1;
+
+  .country-name {
+    color: #303030;
+    font-size: 16px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 290px;
+    display: inline-block;
+
+    @include respond-to-max($tiny) {
+      width: 100%;
+    }
+  }
+
+  .dial-code {
+    color: var(--grey);
+    font-size: 16px;
+  }
+
+  .iti-flag {
+    margin: 0 auto;
+  }
+}
+
+.intl-tel-input .country-list {
+  max-width: 400px;
+}

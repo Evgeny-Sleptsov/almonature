@@ -1,0 +1,164 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-info-sec {
+}
+
+.almo-main-info {
+  &.js-hidden {
+    @include respond-from-min($small) {
+      .almo-main-info__block {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+    }
+  }
+
+  &__block {
+    background-color: var(--white);
+    padding-top: 36px;
+    padding-bottom: 36px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 2px solid #E8E8E8;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    transition: transform .8s , opacity .6s;
+
+
+    @include respond-to-max(1000px) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @include respond-to-max($small) {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    @include respond-to-max($tiny) {
+      padding-top: 18px;
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+    &__links {
+      a + a {
+        margin-left: 20px;
+      }
+      @include respond-to-max(900px) {
+        a + a {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &--1 {
+    padding-bottom: 32px;
+    .almo-main-info__block {
+      background-position: right bottom;
+      background-size: 90% auto;
+      background-image: url('#{$path_to_img}main/info-block/bg-1.jpg');
+
+      @include respond-to-max($small) {
+        padding-bottom: 38%;
+        text-align: center;
+        background-size: 100% auto;
+        background-position: center bottom;
+        background-image: url('#{$path_to_img}main/info-block/bg-1-1000.jpg');
+      }
+
+      .almo-main-info__block__text {
+        max-width: calc(100% / 12 * 8);
+
+        @include respond-to-max($small) {
+          max-width: 100%;
+        }
+      }
+
+      .almo-main-info__block__title {
+        line-height: 1.2em;
+        font-size: 40px;
+        font-weight: 700;
+        padding-bottom: .75em;
+        @include fluid-type($extratiny, $small, 20px, 40px);
+
+      }
+    }
+  }
+
+  &--2 {
+    margin-top: -50px;
+
+    @include respond-to-max($small) {
+      margin-top: 0;
+    }
+    
+    .almo-main-info__block {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      background-position: right center;
+      position: relative;
+      background-size: auto 100%;
+      background-image: url('#{$path_to_img}main/info-block/bg-2.png');
+
+      @include respond-to-max(700px) {
+        padding-top: 50%;
+        background-size: 100% auto;
+        background-image: url('#{$path_to_img}main/info-block/bg-2-700.png');
+        background-position: center top;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        right: 4%;
+        bottom: 18px;
+        position: absolute;
+        width: 42.7%;
+        height: 0;
+        padding-bottom: 30%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        background-image: url('#{$path_to_img}main/info-block/food-2.png');
+
+        @include respond-to-max(800px) {
+          top: 50%;
+          transform: translateY(-50%);
+          bottom: initial;
+        }
+
+        @include respond-to-max(700px) {
+          width: 100%;
+          top: -5%;
+          padding-bottom: 50%;
+          left: 0;
+          right: 0;
+          transform: none;
+        }
+      }
+
+      .almo-text-tag {
+        padding-bottom: 16px;
+      }
+
+      .almo-main-info__title {
+        line-height: 1.35em;
+        font-size: 36px;
+        font-weight: 700;
+        padding-bottom: .6em;
+
+        @include fluid-type($extratiny, $small, 20px, 36px);
+      }
+    }
+
+    .almo-main-info__block__text {
+      max-width: calc(100% / 12 * 6);
+
+      @include respond-to-max(700px) {
+        max-width: 100%;
+      }
+    }
+  }
+}

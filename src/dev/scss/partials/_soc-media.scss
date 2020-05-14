@@ -1,0 +1,53 @@
+.almo-soc {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 -.3em;
+
+  &__item {
+    padding: 0 .3em;
+
+    &__link {
+      display: block;
+
+      .bg-facebook:hover {
+        filter: brightness(125%);
+      }
+  
+      .bg-twitter:hover {
+        filter: brightness(110%);
+      }
+  
+      .bg-instagram:hover {
+        filter: brightness(125%);
+      }
+  
+      .almo-icon {
+        font-size: inherit;
+
+        display: block;
+        transition: filter .25s ease-in-out;
+      }
+    }
+  }
+
+  &--gray {
+    .bg-facebook {
+      filter: grayscale(100%) brightness(150%);
+    }
+
+    .bg-twitter {
+      filter: grayscale(100%);
+    }
+
+    .bg-instagram {
+      filter: grayscale(100%) brightness(150%);
+    }
+
+    .almo-soc__item__link:hover {
+      .almo-icon {
+        filter: grayscale(0%) brightness(100%) !important;
+      }
+    }
+  }
+}

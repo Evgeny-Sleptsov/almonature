@@ -1,0 +1,84 @@
+<div class="almo-popup almo-popup--no-overlay almo-sign-popup" data-with-scroll="true" id="sign-in-pupop">
+  <div class="almo-box almo-popup__cont">
+    <button class="almo-close-btn almo-popup__cont__close-btn  js-close-popup-btn"></button>
+
+    <div class="almo-sign-popup__in">
+      <div class="almo-sign-popup__in__main">
+        <h4 class="almo-head-h4 almo-sign-popup__in__title">Sign in with social profile</h4>
+        <div class="almo-sign-popup__in__soc">
+          <button type="button" class="almo-btn almo-btn--small almo-btn--soc almo-btn--soc--facebook">
+            <i class="almo-icon bg-facebook-2"></i>
+            <span>Sign in with Facebook</span>
+          </button>
+
+          <button type="button" class="almo-btn almo-btn--small almo-btn--soc almo-btn--soc--instag">
+            <i class="almo-icon bg-instagram-2"></i>
+            <span>Connect your Instagram</span>
+          </button>
+
+          <button type="button" class="almo-btn almo-btn--small almo-btn--soc almo-btn--soc--google">
+            <i class="almo-icon bg-google-2"></i>
+            <span>Sign in with Google</span>
+          </button>
+        </div>
+
+        <form class="almo-sign-popup__in__email">
+          <div class="almo-sign-popup__error">
+            <div class="almo-sign-popup__error__icon">
+              <i class="almo-icon bg-warning"></i>
+            </div>
+
+            <div class="almo-sign-popup__error__text">
+              <p class="almo-text-small">
+                  Looks like either the email addressor the password are incorrect. 
+              </p>
+            </div>
+          </div>
+
+          <label class="almo-input-block">
+            <p class="almo-text-reg">Email</p>
+            <input type="email" name="email" class="almo-input-text" placeholder=" " required="">
+            <p class="almo-text-small almo-input-block__mes">Fill this field</p>
+          </label>
+
+          <label class="almo-input-block">
+            <p class="almo-text-reg">Password</p>
+            <p class="almo-input-container">
+              <input type="password" name="password" class="almo-input-text" placeholder=" " required="">
+              <button type="button" class="almo-input-switch-pass js-switch-visible-password" onclick="inputUtils.togglePassVisible(event)">
+                <i>
+                  @@include("../../svg/eyes.html")
+                </i>
+              </button>
+            </p>
+            <p class="almo-text-small almo-input-block__mes">Fill this field</p>
+          </label>
+
+          <button class="almo-btn almo-btn--small">
+            <span>Sign in</span>
+          </button>
+
+          <div class="almo-sign-popup__link-fogot">
+            <button type="button"
+                    class="almo-text-reg js-close-popup-btn js-togglePopup"
+                    data-popup="reset-pass-popup"
+            >
+              <span class="almo-link almo-link--in-text">Forgot password?</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="almo-sign-popup__bot">
+        <p class="almo-text-reg">Don’t have an account yet?
+          <button type="button"
+                  class="almo-link almo-link--in-text js-close-popup-btn js-togglePopup"
+                  data-popup="sign-up-pupop"
+          >
+            Sign up
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

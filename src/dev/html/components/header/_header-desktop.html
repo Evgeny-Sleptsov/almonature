@@ -1,0 +1,126 @@
+<div class="almo-header">
+  <div class="almo-header__top">
+    <div class="almo-header__top__l">
+      @@include("../../components/soc-block.html", {"gray": true})
+    </div>
+
+    <div class="almo-header__top__r">
+      <ul class="almo-header__top__menu">
+        <li>
+          <a href="#">Professional area</a>
+        </li>
+        <li>
+          <button type="button">
+            <i class="almo-icon bg-search"></i>
+            Find a store
+          </button>
+        </li>
+        <li>
+          <button type="button" class="js-toggler" data-box="country-search">Italy</button>
+
+          <div class="almo-box" id="country-search">
+            @@include("./_search-country.html")
+          </div>
+        </li>
+        <li>
+          <button type="button" class="js-toggler" data-box="lang-choose">EN
+            <i class="almo-icon bg-arrow"></i>
+          </button>
+          <div class="almo-box" id="lang-choose">
+            <div>
+              @@include("./_lang-list.html")
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="almo-header__main almo-header__main--border">
+    <nav class="almo-wrap almo-header__main__nav">
+      <ul class="almo-text-reg">
+        <li>
+          <a href="#">
+            <i class="almo-icon bg-almo"></i>
+          </a>
+        </li>
+        <li class="current_page_item">
+          <a href="#">Cat products</a>
+        </li>
+        <li>
+          <a href="#">Dog products</a>
+        </li>
+        <li>
+          <a href="#">Movement</a>
+          <ul class="almo-box">
+            <li class="current_page_item">
+              <a href="#">A new pact with animals</a>
+            </li>
+            <li>
+              <a href="#">Ecosystem as a goal</a>
+            </li>
+            <li>
+              <a href="#">Pet food as a fuel</a>
+            </li>
+            <li>
+              <a href="#">How you can help</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+          <ul class="almo-box">
+            <li>
+              <a href="#">A Companion Animal Is For Life</a>
+            </li>
+            <li>
+              <a href="#">Farmers & Predators</a>
+            </li>
+            <li>
+              <a href="#">Dog Blood Bank</a>
+            </li>
+            <li>
+              <a href="#">Regenerating Villa Fortuna</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About us</a>
+          <ul class="almo-box">
+            <li>
+              <a href="#">Almo Nature</a>
+            </li>
+            <li>
+              <a href="#">Capellino Fundation</a>
+            </li>
+            <li>
+              <a href="#">All activity</a>
+            </li>
+            <li>
+              <a href="#">They write about us</a>
+            </li>
+            <li>
+              <a href="#">Wall of supporters</a>
+            </li>
+            <li>
+              <a href="#">Friends and partners</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <button type="button" class="almo-header__main__nav__sign js-togglePopup" data-popup="sign-in-pupop">
+        <i class="almo-icon bg-sign-in"></i>
+        <span class="almo-text-reg">Sign in</span>
+      </button>
+
+      <button type="button" class="almo-header__main__nav__ava">
+        <span class="almo-icon almo-header__main__nav__ava__img">
+          <img src="#" alt="">
+        </span>
+        <span class="almo-text-reg almo-header__main__nav__ava__text">
+          Kristina Stoyanova
+        </span>
+      </button>
+    </nav>
+  </div>
+</div>

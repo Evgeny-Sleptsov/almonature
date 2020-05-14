@@ -1,0 +1,231 @@
+@import './scss-variables';
+@import './mixins.scss';
+@import './include-media.scss';
+
+html,
+button,
+input,
+textarea,
+a {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  color: var(--black);
+}
+
+strong {
+  font-weight: 700 !important;
+}
+
+.almo-head-h1,
+%almo-head-h1,
+.almo-editable.almo-head-h1 h1 {
+  font-weight: 700;
+  line-height: 1.05em;
+
+  @include fluid-type($extratiny, $small, 40px, 80px);
+}
+
+.almo-head-h2,
+%almo-head-h2,
+.almo-editable.almo-head-h2 h2 {
+  font-weight: 700;
+  line-height: 1.2em;
+
+  @include fluid-type($extratiny, $small, 28px, 48px);
+}
+
+.almo-head-h3,
+%almo-head-h3,
+.almo-editable.almo-head-h3 h3 {
+  font-weight: 700;
+  line-height: 1.35em;
+
+  @include fluid-type($extratiny, $small, 20px, 28px);
+}
+
+.almo-head-h4,
+%almo-head-h4,
+.almo-editable.almo-head-h4 h4 {
+  font-weight: 700;
+  line-height: 1.35em;
+  font-size: 20px;
+
+  @include respond-to-max($tiny) {
+    font-size: 18px;
+  }
+}
+
+.almo-head-h5,
+%almo-head-h5,
+.almo-editable.almo-head-h5 h5 {
+  font-weight: 700;
+  line-height: 1.375em;
+  font-size: 16px;
+
+  @include respond-to-max($tiny) {
+    font-size: 14px;
+  }
+}
+
+.almo-head-product-title,
+%almo-head-product-title,
+.almo-editable.almo-head-product-title h1 {
+  font-weight: 700;
+  line-height: 1.375em;
+  font-size: 36px;
+
+  @include respond-to-max($tiny) {
+    font-size: 14px;
+  }
+}
+
+.almo-text-lead,
+%almo-text-lead,
+.almo-editable.almo-text-lead p {
+  font-weight: 500;
+  line-height: 1.8em;
+  font-size: 20px;
+
+  @include respond-to-max($tiny) {
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+}
+
+.almo-text-reg,
+%almo-text-reg,
+.almo-editable.almo-text-reg p {
+  font-weight: 400;
+  line-height: 1.625em;
+  font-size: 16px;
+
+  @include respond-to-max($tiny) {
+    font-size: 14px;
+  }
+}
+
+// .almo-editable {
+//   a:not([class]) {
+//     font: inherit;
+//     font-weight: 700;
+//     color: var(--blue);
+
+//     &:hover {
+//       color: #367F8F;
+//     }
+//   }
+
+//   em {
+//     font-style: italic;
+//   }
+// }
+
+.almo-text-small,
+%almo-text-small {
+  font-weight: 400;
+  line-height: 1.5em;
+  font-size: 13px;
+}
+
+.almo-text-tag,
+%almo-text-tag {
+  font-weight: 500;
+  line-height: 1.5em;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.almo-num,
+%almo-num {
+  font-family: 'Bangers', cursive;
+  font-weight: 400;
+  line-height: 1.06em;
+  font-size: 144px;
+
+  @include fluid-type($extratiny, $small, 100px, 144px);
+}
+
+//colors
+.almo-text-red,
+%almo-text-red {
+  color: var(--red);
+}
+
+.almo-text-white,
+%almo-text-white {
+  color: var(--white);
+}
+
+.almo-text-green,
+%almo-text-green {
+  color: var(--green);
+}
+
+.almo-text-orange,
+%almo-text-orange {
+  color: var(--orange);
+}
+
+.almo-text-blue,
+%almo-text-blue {
+  color: var(--blue);
+}
+
+.almo-text-dark-blue,
+%almo-text-dark-blue {
+  color: var(--dark-blue);
+}
+
+.almo-text-black,
+%almo-text-black {
+  color: var(--black);
+}
+
+//others
+u,
+.almo-text-undline,
+%almo-text-undline {
+  display: inline;
+  background-image: linear-gradient(45deg, var(--orange) 0, var(--orange) 100%);
+  background-size: 100% 0.4em;
+  background-position: 0 0.85em;
+  background-repeat: no-repeat;
+  text-decoration: none;
+
+  &--red {
+    background-image: linear-gradient(45deg, var(--red) 0, var(--red) 100%);
+  }
+  &--green {
+    background-image: linear-gradient(45deg, var(--green) 0, var(--green) 100%);
+  }
+  &--red-l {
+    background-image: linear-gradient(45deg, #F4C1BA 0, #F4C1BA 100%);
+  }
+}
+
+.almo-ater {
+  svg {
+    position: relative;
+    top: 0.145em;
+    height: 1.2em;
+    width: calc(1.2em / 0.26);
+    margin-right: 0.1em;
+  }
+}
+
+.almo-center {
+  text-align: center;
+}
+.vector {
+  display: inline;
+  font-weight: inherit;
+  padding: 0 10px;
+  background-position: center;
+  background-repeat: round;
+  background-size: cover;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg preserveAspectRatio='none' viewBox='0 0 305 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.2' d='M0 33L1.46586 5.12069L305 0L302.434 31.2931L0 33Z' fill='%23EC422B'/%3e%3c/svg%3e ");
+  &.--green {
+      color: white;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg preserveAspectRatio='none' viewBox='0 0 305 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 33L1.46586 5.12069L305 0L302.434 31.2931L0 33Z' fill='%2327AE4D'/%3e%3c/svg%3e ");
+  }
+}

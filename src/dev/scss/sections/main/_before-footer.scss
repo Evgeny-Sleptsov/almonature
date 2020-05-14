@@ -1,0 +1,16 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-bef-foot {
+  height: 72px;
+  background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='997' height='72' viewBox='0 0 997 72' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 72c17.426-7.208 34.67-14.717 51.823-22.725C95.205 29.152 138.95 6.026 185.963 4.123c58.176-2.303 112.722 28.031 168.992 44.15C399.79 61.087 446.167 64.891 492 72H0z' fill='%23FFDA7C'/%3E%3Cpath d='M217 72c27.626-7.632 54.964-15.582 82.158-24.062C367.935 26.63 437.288 2.145 511.82.13c92.23-2.438 178.705 29.68 267.914 46.747C850.813 60.446 924.338 64.474 997 72H217z' fill='%23EEFFD2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 100%;
+
+  @include respond-to-max($tiny) {
+    height: 48px;
+    background-position: 20% bottom;
+  }
+}
+ 

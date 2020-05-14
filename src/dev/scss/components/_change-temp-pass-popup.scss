@@ -1,0 +1,57 @@
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+.almo-change-temp-pass-popup {
+  position: absolute;
+  right: 24px;
+  top: 40px;
+
+  .almo-change-temp-pass {
+    width: 350px;
+  }
+
+  @include respond-to-max($tiny) {
+    display: none !important;
+  }
+
+  &>.almo-popup__cont {
+    overflow: hidden;
+  }
+}
+
+.almo-change-temp-pass {
+  &__title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .almo-btn {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 36px;
+    max-width: 100% !important;
+  }
+
+  &__bot {
+    padding-top: 1em;
+    position: relative;
+    text-align: center;
+
+    &>button {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      background-color: var(--gray-bg);
+      bottom: -1.2em;
+      content: '';
+      display: block;
+      left: -1em;
+      pointer-events: none;
+      position: absolute;
+      right: -1em;
+      top: 0;
+    }
+  }
+}

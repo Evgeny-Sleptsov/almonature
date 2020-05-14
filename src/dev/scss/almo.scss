@@ -1,0 +1,42 @@
+@import './common/_reset.scss';
+@import './common/_css-variables.scss';
+@import './common/scss-variables.scss';
+@import './common/typography.scss';
+
+@import './partials/general';
+@import './icons/general-icons';
+@import './icons/flags';
+@import './icons/soc-icons';
+@import './icons/png-icons';
+
+@import './components/header';
+@import './components/header-mob';
+@import './components/tabs';
+@import './components/footer';
+
+// common components
+@import './components/soc-media';
+@import './components/contact-block';
+@import './sections/common/help';
+@import './sections/common/stylized-photo';
+@import './sections/common/news-card';
+@import './sections/common/giveback';
+@import './sections/common/projects';
+@import './sections/common/projects/custom-banner';
+@import './sections/common/projects/projects-page-icon';
+
+// common popups
+@import './components/loc-popup';
+@import './components/country-loc-popup';
+@import './components/sign-popup';
+@import './components/reset-pass-popup';
+@import './components/pass-reseted-popup';
+@import './components/change-temp-pass-popup';
+@import './components/new-pass-popup';
+
+//plugins
+@import './plug/swiper';
+@import './plug/tabs.scss';
+
+//main
+@import './sections/main/index.scss';

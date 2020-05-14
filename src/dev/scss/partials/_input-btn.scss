@@ -1,0 +1,114 @@
+.almo-input-btn {
+  display: flex;
+  // padding-bottom: 20px;
+
+  @include respond-to-max(600px) {
+    display: block;
+    padding-bottom: 0;
+  }
+
+  &>.almo-input-block {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: initial;
+    position: relative;
+
+    .almo-input-block__mes {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      padding: 0;
+    }
+
+    &.almo-input-block--error {
+      margin-bottom: 30px;
+    }
+  }
+
+  &>* {
+    height: 60px !important;
+
+    @include respond-to-max(600px) {
+      height: 52px;
+    }
+  }
+
+  .almo-input-text {
+    border-radius: 6px 0 0 6px;
+    border-width: 2px;
+    border-right: none;
+    flex: 1;
+    max-width: auto;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    transition: border 0.2s;
+    height: 100%;
+
+    @include placeholder {
+      font-size: inherit;
+      color: #BDBDBD;
+    }
+
+    @include respond-to-max(600px) {
+      padding: 0 18px;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+
+    &:not(:placeholder-shown),
+    &:focus {
+      border-color: var(--green);
+      border-right: none;
+
+      @include respond-to-max(600px) {
+        padding: 0 5px;
+      }
+    }
+  }
+
+
+  .almo-input-text--red {
+    &:focus {
+      border-color: var(--red);
+      border-right: none;
+    }
+  }
+
+  .almo-btn {
+    font-size: 18px;
+    border-radius: 0 6px 6px 0;
+    flex: none;
+    background-color: var(--green);
+
+    @include respond-to-max(600px) {
+      display: block;
+      margin: 16px auto 0;
+      border-radius: 6px;
+    }
+
+    &:hover {
+      background-color: #569B2C;
+    }
+
+    &:active {
+      background-color: rgb(75, 131, 40);
+    }
+  }
+
+  .almo-btn--red {
+    background-color: var(--red);
+
+    &:hover {
+      background-color: #CE2811;
+    }
+
+    &:active {
+      background-color: #CE2811;
+    }
+  }
+
+  .almo-btn--width-small {
+    min-width: 100px;
+  }
+}

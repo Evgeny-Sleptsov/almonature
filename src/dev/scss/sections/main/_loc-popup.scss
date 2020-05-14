@@ -1,0 +1,52 @@
+@import '../../common/mixins.scss';
+@import '../../common/scss-variables.scss';
+
+.almo-loc-popup {
+  position: absolute;
+  top: 40px;
+  right: 24px;
+  bottom: auto;
+  left: auto;
+  padding: 0;
+  border-radius: 12px;
+
+  @include respond-to-max($small) {
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    padding: 14px;
+  }
+
+  &__cont {
+    max-width: 520px;
+    min-height: auto;
+
+    @include respond-to-max($tiny) {
+      max-width: 385px;
+    }
+
+    .almo-head-h5 {
+      padding-bottom: 8px;
+    }
+
+    .almo-text-reg {
+      padding-bottom: 1em;
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-to-max($tiny) {
+        flex-wrap: wrap;
+        justify-content: center;
+        .almo-btn:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<svg width="32" height="550" viewBox="0 0 32 550" fill="none" xmlns="http://www.w3.org/2000/svg" class="animation-roll-item animation-roll-to-hide" style="margin-left:475px;">
+  <path
+    class="svg-bg-path"
+    d="M1.928 2C1.928 98 58 255 13 520"
+    stroke="url(#paint0_linear-section-3--hqs)"
+    stroke-opacity=".3"
+    stroke-width="3" 
+    stroke-linecap="round"
+  />
+
+  <!-- <path
+    class="clip-path-el"
+    d="M1.928 2C1.928 98 58 255 13 520"
+    stroke="url(#paint0_linear-section-3--hqs--stroke)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="525"
+    stroke-dashoffset="525"
+  /> -->
+
+  <circle class="roller" cx="16" cy="16" r="12" fill="url(#ball-3--hqs)" filter="url(#shadow-3--hqs)"/>
+
+  <defs>
+    <linearGradient id="paint0_linear-section-3--hqs" x1="2.377" x2="2.377" y1="129.875" y2="17.813" gradientUnits="userSpaceOnUse">
+      <stop offset=".746" stop-color="#F4F4F4"/>
+      <stop offset="1" stop-color="#DADADA" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="paint0_linear-section-3--hqs--stroke" x1="2.377" x2="2.377" y1="129.875" y2="17.813" gradientUnits="userSpaceOnUse">
+      <stop offset=".746" stop-color="#ecc1bb"/>
+      <stop offset="1" stop-color="#ecc1bb" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="shadow-3--hqs" width="46" height="46" x="-1" y="-1">
+      @@include("./_roll-shadow.html")
+    </filter>
+    <pattern id="ball-3--hqs" class="ball-pattern" width="38" height="38">
+      @@include("./_roll-pattern.html")     
+    </pattern>
+  </defs>
+</svg>

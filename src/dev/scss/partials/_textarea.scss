@@ -1,0 +1,31 @@
+.almo-textarea {
+  font-size: 16px;
+  width: 100%;
+  font-weight: 400;
+  background-color: var(--white);
+  border: 1px solid #D7D7D7;
+  border-radius: 6px;
+  transition: border-color .25s ease-in-out;
+  font-family: inherit;
+  line-height: inherit;
+  height: 10em;
+  padding-left: .875em;
+  padding-right: .875em;
+  padding-top: .425em;
+  padding-bottom: .425em;
+  caret-color: var(--black);
+  resize: none;
+
+  @include placeholder {
+    transition: opacity .25s ease-in-out;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: var(--black);
+
+    @include placeholder {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div class="almo-change-temp-pass-mob">
+  <div class="almo-change-temp-pass">
+    <form>
+      <h4 class="almo-head-h4 almo-change-temp-pass__title">
+          Change temporary password
+      </h4>
+
+      <label class="almo-input-block">
+        <p class="almo-text-reg">Password</p>
+        <p class="almo-input-container">
+          <input type="password" name="password" class="almo-input-text" placeholder=" " required="">
+          <button type="button" class="almo-input-switch-pass js-switch-visible-password" onclick="inputUtils.togglePassVisible(event)">
+            <i>
+                  @@include("../../svg/eyes.html")
+                </i>
+          </button>
+        </p>
+        <p class="almo-text-small almo-input-block__mes">Fill this field</p>
+      </label>
+
+      <button type="submit" class="almo-btn" data-popup="pass-reseted-popup">
+        <span>Set up new password</span>
+      </button>
+    </form>
+
+    <div class="almo-change-temp-pass__bot">
+      <button class="almo-head-h5 js-open-subpopup" data-submenu="submenu-sign" data-no-tran="true">
+        <span class="almo-link almo-link--in-text almo-link--arrow-r">
+          <i></i>Back to Sign In</span>
+      </button>
+    </div>
+  </div>
+</div>

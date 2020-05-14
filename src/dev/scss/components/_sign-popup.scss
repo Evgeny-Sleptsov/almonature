@@ -1,0 +1,157 @@
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+.almo-sign-popup {
+  position: absolute;
+  right: 24px;
+  top: 40px;
+
+  // @include respond-to-max($small) {
+  //   display: none !important;
+  // }
+
+  .almo-popup__cont {
+    max-width: 390px;
+    overflow: hidden;
+
+    .almo-btn {
+      width: 100%;
+    }
+  }
+
+  &__link-fogot {
+    text-align: center;
+    margin-bottom: 1.75em;
+
+    .almo-link {
+      font-weight: inherit;
+    }
+  }
+
+  &__bot {
+    text-align: center;
+    padding-top: 1em;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: var(--gray-bg);
+      bottom: -1.2em;
+      left: -1em;
+      right: -1em;
+      pointer-events: none;
+      top: 0;
+      position: absolute;
+    }
+
+    &>.almo-text-reg {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__in {
+    &__title {
+      padding-bottom: 1em;
+      text-align: center;
+    }
+
+    &__soc {
+      padding-bottom: 44px;
+      position: relative;
+
+      &>.almo-btn {
+        margin-bottom: 20px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: -1em;
+        left: -1em;
+        border-top: 1px solid var(--gray-line);
+        content: '';
+        pointer-events: none;
+      }
+
+      &::before {
+        @extend %almo-text-small;
+        color: #979797;
+        display: block;
+        position: absolute;
+        content: 'or';
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #fff;
+        padding: 1em 2em;
+        left: 50%;
+        bottom: 0;
+        transform: translate3d(-50%, 50%, 0);
+        z-index: 1;
+      }
+    }
+
+    &__email {
+      /*padding-top: 28px;*/
+      &>.almo-btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      &>.almo-input-block {
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+
+  &__up {
+    text-align: center;
+
+    &__title {
+      padding-bottom: 12px;
+    }
+
+    &__subtitle {
+      padding-bottom: 2em;
+    }
+
+    &__block {
+      padding-bottom: 1.6em;
+
+      &>.almo-btn {
+        margin-bottom: 12px;
+      }
+
+      &>.almo-text-small {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__error {
+    border-radius: 6px;
+    display: flex;
+    overflow: hidden;
+
+    &__icon {
+      flex: none;
+      background-color: #F76767;
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__text {
+      width: 100%;
+      padding: 10px 16px;
+      background-color: #FEF0F0;
+    }
+  }
+}

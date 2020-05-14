@@ -1,0 +1,409 @@
+@import '../common/scss-variables.scss';
+@import '../common/mixins.scss';
+
+.almo-btn,
+%almo-btn {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5em;
+  padding-top: 0;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 0;
+  height: 3em;
+  color: var(--red);
+  cursor: pointer;
+  background-color: currentColor;
+  transition: color 0.2s, background .25s ease-in-out, opacity .25s ease-in-out;
+  // transition: background .25s ease-in-out, opacity .25s ease-in-out;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  min-width: 250px;
+
+  &.almo-disable,
+  &[disabled] {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &--small {
+    font-size: 16px;
+  }
+
+  @include respond-to-max($tiny) {
+    max-width: calc(375px - var(--col-step));
+    width: 100%;
+    font-size: 16px;
+  }
+
+  span {
+    display: block;
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.1em;
+    font-family: inherit;
+    color: var(--white);
+
+    b {
+      font-size: inherit;
+      font-weight: inherit;
+
+      @include respond-to-max($tiny) {
+        display: none;
+      }
+    }
+
+    @include respond-to-max($tiny) {
+      // font-size: 1.125em;
+    }
+  }
+  @include hoverDesktop() {
+    &:hover {
+      color: #CE2811;
+    }
+  
+    &:active {
+      color: #9F1401;
+    }
+  }
+  @include hoverMobile() {
+    &:active {
+      color: #9F1401;
+    }
+  }
+  
+
+  &--cut,
+  %--cut {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid currentColor;
+    transition: background .25s ease-in-out, opacity .25s ease-in-out;
+
+    span {
+      color: currentColor;
+    }
+    @include hoverDesktop() {
+      &:hover {
+        background-color: currentColor;
+  
+        span {
+          color: var(--white);
+        }
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        background-color: currentColor;
+        span {
+          color: var(--white);
+        }
+      }
+    }
+  }
+
+  &--green {
+    color: var(--green);
+    background-color: currentColor;
+    border: 2px solid currentColor;
+
+    @include hoverDesktop() {
+      &:hover {
+        color: darken(#6DAD45, 5%);
+      }
+  
+      &:active {
+        color: darken(#6DAD45, 10%);
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        color: darken(#6DAD45, 10%);
+      }
+    }
+  }
+
+  &--blue {
+    color: var(--blue);
+    @include hoverDesktop() {
+      &:hover {
+        color: darken(#235863, 5%);
+      }
+  
+      &:active {
+        color: darken(#235863, 10%);
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        color: darken(#235863, 10%);
+      }
+    }
+  }
+
+  &--icon {
+    i {
+      @extend %almo-icon;
+      margin-right: 20px;
+    }
+  }
+
+  &--soc {
+    justify-content: flex-start;
+
+    &>span {
+      text-align: left;
+    }
+
+    @include respond-to-max(330px) {
+      font-size: 15px;
+    }
+
+    .almo-icon {
+      font-size: inherit;
+      margin-right: .8em;
+    }
+
+    &--facebook {
+      color: #5674DE;
+      @include hoverDesktop() {
+        &:hover {
+          color: #4c63b4;
+        }
+  
+        &:active {
+          color: #4458a0;
+        }
+      }
+      @include hoverMobile() {
+        &:active {
+          color: #4458a0;
+        }
+      }
+    }
+
+    &--instag {
+      color: #EF61AE;
+      @include hoverDesktop() {
+        &:hover {
+          color: #da559e;
+        }
+  
+        &:active {
+          color: #bb4e8a;
+        }
+      }
+      @include hoverMobile() {
+        &:active {
+          color: #bb4e8a;
+        }
+      }
+    }
+
+    &--google {
+      color: #DB4437;
+    }
+  }
+
+  &--refresh {
+    color: var(--blue);
+    border-color: var(--blue);
+
+    i {
+      align-self: center;
+      height: 0.9em;
+      width: 1.1em;
+      background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='25' height='21' viewBox='0 0 25 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.453 13.74l4.736 2.084 2.188-4.715' stroke='%23235863' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.14 20c5.18 0 9.38-4.229 9.38-9.446s-4.2-9.446-9.38-9.446c-5.18 0-9.378 4.23-9.378 9.446 0 1.387.57 3.815 1.103 5' stroke='%23235863' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    @include hoverDesktop() {
+      &:hover {
+        color: var(--blue);
+  
+        i {
+        background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='25' height='21' viewBox='0 0 25 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.453 13.74l4.736 2.084 2.188-4.715' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.14 20c5.18 0 9.38-4.229 9.38-9.446s-4.2-9.446-9.38-9.446c-5.18 0-9.378 4.23-9.378 9.446 0 1.387.57 3.815 1.103 5' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  &--moore {
+    min-width: 210px;
+
+    i {
+      height: 26px;
+      width: 26px;
+      background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='25' height='21' viewBox='0 0 25 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.453 13.74l4.736 2.084 2.188-4.715' stroke='%23EC422B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.14 20c5.18 0 9.38-4.229 9.38-9.446s-4.2-9.446-9.38-9.446c-5.18 0-9.378 4.23-9.378 9.446 0 1.387.57 3.815 1.103 5' stroke='%23EC422B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    @include hoverDesktop() {
+      &:hover {
+        i {
+          background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='25' height='21' viewBox='0 0 25 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.453 13.74l4.736 2.084 2.188-4.715' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.14 20c5.18 0 9.38-4.229 9.38-9.446s-4.2-9.446-9.38-9.446c-5.18 0-9.378 4.23-9.378 9.446 0 1.387.57 3.815 1.103 5' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        i {
+          background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='25' height='21' viewBox='0 0 25 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.453 13.74l4.736 2.084 2.188-4.715' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.14 20c5.18 0 9.38-4.229 9.38-9.446s-4.2-9.446-9.38-9.446c-5.18 0-9.378 4.23-9.378 9.446 0 1.387.57 3.815 1.103 5' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+  
+  &--feedback {
+    border-color: var(--green);
+    color: var(--green);
+
+    i {
+      height: 1.1em;
+      width: 1.3em;
+      background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.963 15.18l-.929-.37-.12.299.08.313.97-.243zm-3.595 4.592l.598-.801-.602-.449-.599.452.603.798zm2.85 2.627l.768-.64-.768.64zm1.782-.36l-1 .008 1-.008zm-1.378-10.277a8.201 8.201 0 0 1-.588 3.047l1.858.74c.473-1.187.73-2.461.73-3.787h-2zM13.812 2c6.693 0 11.81 4.527 11.81 9.762h2C27.622 5.11 21.268 0 13.812 0v2zM2 11.762C2 6.527 7.118 2 13.811 2V0C6.354 0 0 5.11 0 11.762h2zm11.811 9.763C7.118 21.525 2 16.998 2 11.762H0c0 6.653 6.354 11.763 13.811 11.763v-2zm7.954-2.551c-2.088 1.575-4.874 2.55-7.954 2.55v2c3.498 0 6.71-1.106 9.159-2.953l-1.204-1.597zm.005 1.6c.984.734 1.937 1.574 2.68 2.465l1.536-1.28c-.875-1.05-1.958-1.996-3.02-2.788l-1.196 1.603zm2.68 2.465c.524.63 1.325.91 2.052.787a1.805 1.805 0 0 0 1.05-.567c.303-.337.45-.769.448-1.227l-2 .015c0 .01-.002-.003.008-.032a.284.284 0 0 1 .056-.09c.054-.061.104-.07.105-.071h-.019a.204.204 0 0 1-.05-.013.273.273 0 0 1-.114-.082l-1.537 1.28zM28 22.032c-.017-2.265-.531-4.958-1.067-7.096l-1.94.486c.522 2.084.992 4.596 1.007 6.625l2-.015z' fill='%236DAD45'/%3E%3C/svg%3E");
+    }
+    @include hoverDesktop() {
+      &:hover {
+        border-color: var(--green);
+        background-color: var(--green);
+  
+        i {
+          background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.963 15.18l-.929-.37-.12.299.08.313.97-.243zm-3.595 4.592l.598-.801-.602-.449-.599.452.603.798zm2.85 2.627l.768-.64-.768.64zm1.782-.36l-1 .008 1-.008zm-1.378-10.277a8.201 8.201 0 0 1-.588 3.047l1.858.74c.473-1.187.73-2.461.73-3.787h-2zM13.812 2c6.693 0 11.81 4.527 11.81 9.762h2C27.622 5.11 21.268 0 13.812 0v2zM2 11.762C2 6.527 7.118 2 13.811 2V0C6.354 0 0 5.11 0 11.762h2zm11.811 9.763C7.118 21.525 2 16.998 2 11.762H0c0 6.653 6.354 11.763 13.811 11.763v-2zm7.954-2.551c-2.088 1.575-4.874 2.55-7.954 2.55v2c3.498 0 6.71-1.106 9.159-2.953l-1.204-1.597zm.005 1.6c.984.734 1.937 1.574 2.68 2.465l1.536-1.28c-.875-1.05-1.958-1.996-3.02-2.788l-1.196 1.603zm2.68 2.465c.524.63 1.325.91 2.052.787a1.805 1.805 0 0 0 1.05-.567c.303-.337.45-.769.448-1.227l-2 .015c0 .01-.002-.003.008-.032a.284.284 0 0 1 .056-.09c.054-.061.104-.07.105-.071h-.019a.204.204 0 0 1-.05-.013.273.273 0 0 1-.114-.082l-1.537 1.28zM28 22.032c-.017-2.265-.531-4.958-1.067-7.096l-1.94.486c.522 2.084.992 4.596 1.007 6.625l2-.015z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  &--feedback {
+    border-color: var(--green);
+    color: var(--green);
+
+    i {
+      align-self: center;
+      height: 1.1em;
+      width: 1.3em;
+      background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.963 15.18l-.929-.37-.12.299.08.313.97-.243zm-3.595 4.592l.598-.801-.602-.449-.599.452.603.798zm2.85 2.627l.768-.64-.768.64zm1.782-.36l-1 .008 1-.008zm-1.378-10.277a8.201 8.201 0 0 1-.588 3.047l1.858.74c.473-1.187.73-2.461.73-3.787h-2zM13.812 2c6.693 0 11.81 4.527 11.81 9.762h2C27.622 5.11 21.268 0 13.812 0v2zM2 11.762C2 6.527 7.118 2 13.811 2V0C6.354 0 0 5.11 0 11.762h2zm11.811 9.763C7.118 21.525 2 16.998 2 11.762H0c0 6.653 6.354 11.763 13.811 11.763v-2zm7.954-2.551c-2.088 1.575-4.874 2.55-7.954 2.55v2c3.498 0 6.71-1.106 9.159-2.953l-1.204-1.597zm.005 1.6c.984.734 1.937 1.574 2.68 2.465l1.536-1.28c-.875-1.05-1.958-1.996-3.02-2.788l-1.196 1.603zm2.68 2.465c.524.63 1.325.91 2.052.787a1.805 1.805 0 0 0 1.05-.567c.303-.337.45-.769.448-1.227l-2 .015c0 .01-.002-.003.008-.032a.284.284 0 0 1 .056-.09c.054-.061.104-.07.105-.071h-.019a.204.204 0 0 1-.05-.013.273.273 0 0 1-.114-.082l-1.537 1.28zM28 22.032c-.017-2.265-.531-4.958-1.067-7.096l-1.94.486c.522 2.084.992 4.596 1.007 6.625l2-.015z' fill='%236DAD45'/%3E%3C/svg%3E");
+    }
+    @include hoverDesktop() {
+      &:hover {
+        border-color: var(--green);
+        background-color: var(--green);
+  
+        i {
+          background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.963 15.18l-.929-.37-.12.299.08.313.97-.243zm-3.595 4.592l.598-.801-.602-.449-.599.452.603.798zm2.85 2.627l.768-.64-.768.64zm1.782-.36l-1 .008 1-.008zm-1.378-10.277a8.201 8.201 0 0 1-.588 3.047l1.858.74c.473-1.187.73-2.461.73-3.787h-2zM13.812 2c6.693 0 11.81 4.527 11.81 9.762h2C27.622 5.11 21.268 0 13.812 0v2zM2 11.762C2 6.527 7.118 2 13.811 2V0C6.354 0 0 5.11 0 11.762h2zm11.811 9.763C7.118 21.525 2 16.998 2 11.762H0c0 6.653 6.354 11.763 13.811 11.763v-2zm7.954-2.551c-2.088 1.575-4.874 2.55-7.954 2.55v2c3.498 0 6.71-1.106 9.159-2.953l-1.204-1.597zm.005 1.6c.984.734 1.937 1.574 2.68 2.465l1.536-1.28c-.875-1.05-1.958-1.996-3.02-2.788l-1.196 1.603zm2.68 2.465c.524.63 1.325.91 2.052.787a1.805 1.805 0 0 0 1.05-.567c.303-.337.45-.769.448-1.227l-2 .015c0 .01-.002-.003.008-.032a.284.284 0 0 1 .056-.09c.054-.061.104-.07.105-.071h-.019a.204.204 0 0 1-.05-.013.273.273 0 0 1-.114-.082l-1.537 1.28zM28 22.032c-.017-2.265-.531-4.958-1.067-7.096l-1.94.486c.522 2.084.992 4.596 1.007 6.625l2-.015z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+  &--arrow-down {
+    border-color: var(--green);
+    color: var(--green);
+    i {
+      transition: all 0.25s;
+      height: 1.1em;
+      width: 1.3em;
+      transform: rotate(90deg);
+      background: currentColor;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='17' viewBox='0 0 20 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.4326 16L18.9999 8.5L11.4326 1' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M18.3736 8.51166L12.7837 8.50807L1.00003 8.49994' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    }
+    @include hoverDesktop() {
+      &:hover {
+        color: white;
+        border-color: var(--green);
+        background-color: var(--green);
+        i {
+          background: currentColor;
+        }
+      }
+      &:active {
+        background-color: darken(#6DAD45, 10%);
+        color: white;
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        background-color: darken(#6DAD45, 10%);
+        color: white;
+      }
+    }
+    &.js-rotate {
+      i {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &--arrow-right {
+    color: white;
+    i {
+      transition: all 0.25s;
+      height: 1.1em;
+      width: 1.3em;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='17' viewBox='0 0 20 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.4326 16L18.9999 8.5L11.4326 1' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M18.3736 8.51166L12.7837 8.50807L1.00003 8.49994' stroke='white' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    }
+  }
+
+
+  &--slider {
+
+    &-next,
+    &-prev {
+      @extend %almo-btn--slider;
+    }
+
+    &-prev {
+      @extend %almo-btn--slider-prev;
+    }
+  }
+}
+
+%almo-btn--slider {
+  & {
+    position: relative;
+    height: 3em;
+    width: 3em;
+    font-size: inherit;
+    color: transparent;
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    transition: filter 0.2s, box-shodow 0.2s;
+    @include hoverDesktop() {
+      &:hover {
+        filter: brightness(98%);
+      }
+      &:active {
+        filter: brightness(98%);
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+      }
+    }
+    @include hoverMobile() {
+      &:active {
+        filter: brightness(98%);
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: calc(50% + 1px);
+      left: calc(50% + 2px);
+      content: '';
+      @extend %icon-arrow-next;
+      background-size: contain;
+      background-position: center;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-prev {
+    &:after {
+      left: calc(50% - 3px);
+      transform: rotate(180deg) translate(50%, 50%);
+    }
+  }
+}

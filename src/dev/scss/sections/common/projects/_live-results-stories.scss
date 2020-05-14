@@ -1,0 +1,22 @@
+.almo-project-live-results-stories {
+  &-sec {
+    padding-bottom: 68px;
+
+    @include respond-to-max($tiny) {
+      padding-bottom: 40px
+    }
+  }
+
+  &__refresh {
+    padding-top: 4px;
+    text-align: center;
+
+    @include respond-to-max($small) {
+      padding-top: 16px;
+    }
+
+    @include respond-to-max($small) {
+      padding-top: 0;
+    }
+  }
+}

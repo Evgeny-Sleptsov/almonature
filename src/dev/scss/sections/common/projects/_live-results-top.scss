@@ -1,0 +1,71 @@
+#live-results {
+  --top: 68px;
+
+  background-color: var(--gray-bg);
+
+  @include respond-to-max($tiny) {
+    --top: 30px;
+  }
+}
+
+.almo-projects-live-results {
+  background-color: var(--gray-bg);
+}
+
+.almo-project-live-results-top {
+  &-sec {
+    // padding-top: 68px;
+    padding-bottom: 40px;
+
+    @include respond-to-max($tiny) {
+      // padding-top: 30px;
+      padding-bottom: 20px;
+    }
+  }
+  .almo-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-to-max($medium) {
+      padding: 20px 20px 28px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include respond-to-max($tiny) {
+      padding: 20px 14px;
+      align-items: center;
+    }
+
+    &.almo-editable {
+      p {
+        @extend %almo-text-lead;
+        max-width: 710px;
+        padding-right: var(--col-step);
+    
+        @include respond-to-max($medium) {
+          padding-right: 0;
+          max-width: initial;
+        }
+      }
+      a {
+        @extend %almo-btn;
+        @extend %almo-btn--cut;
+
+        flex: none;
+
+        @include respond-to-max($medium) {
+          margin-top: 20px;
+        }
+
+        @include respond-to-max($tiny) {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  .almo-panel {
+    background-color: #ededed;
+  }
+}

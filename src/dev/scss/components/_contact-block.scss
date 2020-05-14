@@ -1,0 +1,42 @@
+.almo-contact-block {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    align-items: center;
+
+    &>p {
+      display: flex;
+      align-items: center;
+
+      &>a {
+        display: block;
+        font-size: 0;
+
+        &>svg>rect {
+          transition: all 0.1s;
+        }
+
+        &:hover {
+          svg>rect {
+            fill: darken(#ffffff, 5%);
+          }
+        }
+      }
+
+      &>a+a {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &__list {
+    &>li {
+      padding: 2px 0;
+
+      &>.almo-icon {
+        margin-right: 10px;
+      }
+    }
+  }
+}

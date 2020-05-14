@@ -1,0 +1,195 @@
+@import '../common/scss-variables.scss';
+@import '../common/mixins.scss';
+
+.almo-header-mob {
+  display: none;
+  border-bottom: 1px solid var(--gray-line);
+
+  @include respond-to-max($small) {
+    display: block;
+  }
+
+  &__burger {
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+
+    &.js-active {
+      .hamRotate {
+        transform: rotate(45deg);
+      }
+
+      .hamRotate180 {
+        transform: rotate(180deg);
+      }
+
+      .ham1 .top {
+        stroke-dashoffset: -98px;
+      }
+  
+      .ham1 .bottom {
+        stroke-dashoffset: -138px;
+      }
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: #000;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
+
+    .ham1 .top {
+      stroke-dasharray: 40 139;
+    }
+
+    .ham1 .bottom {
+      stroke-dasharray: 40 180;
+    }
+  }
+
+  &__main {
+    height: 64px;
+    display: flex;
+    align-items: center;
+
+    .bg-almo {
+      font-size: 14px;
+    }
+  }
+
+  &__nav {
+    background-color: var(--white);
+    position: fixed;
+    z-index: 5;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transition: transform .25s ease-in-out;
+    transform: translate3d(-100%, 0, 0);
+    pointer-events: none;
+
+    &.js-active {
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &__links {
+      &>li {
+        padding: 12px 14px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        transition: background .25s ease-in-out;
+
+        .js-accor-btn {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        .js-accor-btn::after {
+          content: '';
+          display: block;
+          position: absolute;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          font-size: 20px;
+          width: 1em;
+          height: 0.45em;
+          opacity: .3;
+          @extend %bg-arrow;
+          transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+          right: 15px;
+          top: 50%;
+          transform: translate3d(0, -50%, 0);
+        }
+
+        &.js-accor-item.show {
+          background-color: var(--gray-popup);
+
+          .js-accor-btn {
+            font-weight: 700;
+          }
+
+          .js-accor-btn::after {
+            transform: translate3d(0, -50%, 0) rotate(180deg);
+          }
+        }
+
+        button {
+          font-size: inherit;
+        }
+
+        &>ul {
+          transition: max-height .25s ease-in-out;
+          max-height: 0;
+          overflow: hidden;
+
+          &>li {
+            padding: 4px 0;
+          }
+        }
+      }
+    }
+
+    &__btns {
+      margin-top: auto;
+
+      &__find {
+        .bg-search {
+          font-size: 32px;
+        }
+      }
+
+      &__country,
+      &__lang {
+        background-color: #F7F7F7;
+      }
+
+      &>li {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid var(--gray-line);
+
+        button,
+        a {
+          display: flex;
+          align-items: center;
+          font-size: inherit;
+          width: 100%;
+          height: 100%;
+          padding: 0 14px;
+
+          .almo-icon {
+            margin-right: 10px;
+            width: 24px !important;
+          }
+        }
+      }
+    }
+  }
+}

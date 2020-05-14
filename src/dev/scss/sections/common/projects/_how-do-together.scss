@@ -1,0 +1,398 @@
+@import "../../../icons/icons-variables";
+
+.almo-project-how-together {
+
+  &-sec {
+    padding: 80px 0 0;
+    overflow: hidden;
+
+    @include respond-to-max($small) {
+      padding-top: 32px;
+    }
+  }
+
+  .almo-head-h2 {
+    color: var(--baseColor);
+  }
+
+  $delayAmin: 0.4s;
+
+  &__columns {
+    display: flex;
+    margin-top: 32px;
+
+    @include respond-to-max(750px) {
+      flex-direction: column;
+    }
+
+    @include respond-to-max($tiny) {
+      margin-top: 20px;
+    }
+
+    ul {
+      counter-reset: list;
+      flex: 1;
+      padding-bottom: 90px;
+
+      // @include respond-to-max($medium) {
+      //   padding-bottom: 50px;
+      // }
+
+      @include respond-to-max(750px) {
+        padding-bottom: 10px;
+      }
+
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 44px;
+
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+
+        @include respond-to-max($medium) {
+          align-items: flex-start;
+          margin-bottom: 44px !important;
+        }
+
+        @include respond-to-max(750px) {
+          margin-bottom: 20px !important;
+        }
+
+        p {
+          font-weight: 500;
+          line-height: 1.5em;
+          color: var(--black);
+
+          @extend %almo-text-lead;
+          @extend %almo-text-red;
+
+          transition-property: transform, opacity;
+          transition-duration: 0.8s, 0.6s;
+
+          span {
+            color: var(--baseColor);
+            font-weight: inherit;
+          }
+        }
+
+        &:before {
+          margin-right: 36px;
+          flex: none;
+
+          width: 80px;
+
+          @extend %almo-num;
+          color: var(--baseColor);
+
+          line-height: 1;
+
+          counter-increment: list;
+          content: counter(list);
+
+          transition-property: opacity;
+          transition-duration: 1s;
+        }
+
+        &:after {
+          pointer-events: none;
+          position: absolute;
+          top: calc(100% - 1.8em);
+          content: '';
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          z-index: -1;
+
+          transition-property: opacity;
+          transition-duration: 1s;
+
+          @include respond-to-max($medium) {
+            background: none !important;
+            transform: none !important;
+            width: 0 !important;
+            left: 26px !important;
+            top: calc(0.5em + 57px) !important;
+            height: calc(100% - 0.5em) !important;
+            border-left: 4px dotted #9B9D9E;
+            @include fluid-type($extratiny, $small, 100px, 144px);
+          }
+          @include respond-to-max($tiny) {
+            top: calc(0.5em + 50px) !important;
+            height: calc(100% - 0.7em) !important;
+          }
+        }
+
+        @include respond-to-max($medium) {
+          &:before {
+            width: 60px;
+          }
+        }
+
+        @include respond-to-max(750px) {
+          &:before {
+            margin-right: 8px;
+            width: 0.58em;
+            // background-color: var(--white);
+          }
+        }
+
+        &:nth-child(odd) {
+          &:after {
+            width: 72px;
+            height: 91px;
+            left: 50px;
+            background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='76' height='100' viewBox='0 0 76 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.2' d='M2.767 3.154c27.638-2.083 73.391 40.859 70.391 93.86' stroke='%23303030' stroke-width='5' stroke-linecap='round' stroke-linejoin='bevel' stroke-dasharray='0.1 20'/%3E%3C/svg%3E");
+          }
+
+          @include respond-to-max($medium) {
+            &:after {
+              
+            }
+          }
+
+          @include respond-to-max(750px) {
+            &:after {
+              
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          &:after {
+            top: calc(100% - 3em);
+            height: 127px;
+            width: 71px;
+            left: -75px;
+            background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='62' height='143' viewBox='0 0 62 143' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.2' d='M59.433 3.125C31.678 4.127-21.562 85.707 14.808 139.933' stroke='%23303030' stroke-width='5' stroke-linecap='round' stroke-linejoin='bevel' stroke-dasharray='0.1 20'/%3E%3C/svg%3E");
+          }
+
+          @include respond-to-max(750px) {
+            &:after {
+              
+            }
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          &:after {
+            display: none;
+          }
+        }
+
+        &:nth-child(1) {
+          p {
+            transition-delay: 0.15s, 0.1s;
+          }
+          &:before {
+            transition-delay: 0.1s;
+          }
+          &:after {
+            transition-delay: 0.2s;
+          }
+        }
+        &:nth-child(2) {
+          p {
+            transition-delay: 0.15s + $delayAmin, 0.1s + $delayAmin;
+          }
+          &:before {
+            transition-delay: 0.1s + $delayAmin;
+          }
+          &:after {
+            transition-delay: 0.2s + $delayAmin;
+          }
+        }
+        &:nth-child(3) {
+          p {
+            transition-delay: 0.15s + 2 * $delayAmin, 0.1s + 2 * $delayAmin;
+          }
+          &:before {
+            transition-delay: 0.1s + 2 * $delayAmin;
+          }
+        }
+      }
+    }
+
+    &.js-hidden {
+      li:before {
+        opacity: 0;
+      }
+      li:after {
+        opacity: 0;
+      }
+      li > p {
+        transform: translate3d(-40px, 0, 0);
+        opacity: 0;
+      }
+
+      // .almo-project-how-together__profit-inner {
+      //   transform: scale(0.7);
+      //   opacity: 0;
+      // }
+    }
+  }
+  &__profit {
+    flex: none;
+    padding-left: 30px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    @include respond-to-max($medium) {
+      padding-left: 0;
+      margin-left: -60px;
+      width: auto;
+    }
+
+    @include respond-to-max(750px) {
+      margin-left: 0;
+      padding-top: 270px;
+      background-size: auto 260px;
+      background-position: center top;
+    }
+
+    @include respond-to-max($tiny) {
+      margin: 0 -10px;
+    }
+
+    &-inner {
+      position: relative;
+      padding: 97px 0 25px 78px;
+      width: 400px;
+
+      // transition: opacity 0.5s 5 * $delayAmin, transform 0.6s 5 * $delayAmin cubic-bezier(.48,.92,.74,1.2);
+
+      @include respond-to-max($medium) {
+        padding: 93px 0 32px 98px;
+        width: 350px;
+      }
+
+      @include respond-to-max(750px) {
+        width: initial;
+        padding: 70px 0 30px 0;
+      }
+
+      @include respond-to-max($tiny) {
+        margin: 0 10px;
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -50px;
+        height: 100%;
+        width: auto;
+        content: '';
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='454' height='327' viewBox='0 0 454 327' fill='none' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.05' d='M388.408 56.316C297.003-15.17 134.772-37.01 51.518 111.952c-83.256 148.963-75.808 235.43 115.063 210.86C357.453 298.241 560.509 190.91 388.408 56.316z' fill='%23235863'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        @include respond-to-max($medium) {
+          right: -180px;
+        }
+        @include respond-to-max(750px) {
+          right: -35vw;
+          left: -20vw;
+        }
+        @include respond-to-max($tiny) {
+          right: -25vw;
+          // left: -5vw;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        top: -4px;
+        left: 78px;
+        z-index: 1;
+        content: '';
+        @extend %almo-icon;
+        @extend %bg-profit;
+
+        @include respond-to-max($medium) {
+          left: 98px;
+        }
+
+        @include respond-to-max(750px) {
+          left: 0;
+          font-size: 15.5px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.8em;
+
+        strong {
+          color: var(--blue);
+        }
+
+        & + p {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  &__indicators {
+    .almo-head-h4 {
+      margin-bottom: 20px;
+
+      @include respond-to-max($medium) {
+        margin-bottom: 0;
+      }
+
+      @include respond-to-max($medium) {
+        padding-top: 32px;
+      }
+    }
+
+    @include respond-to-max($medium) {
+      // padding-bottom: 32px;
+    }
+
+    @include respond-to-max($tiny) {
+      padding-top: 30px;
+      padding-bottom: 0;
+    }
+
+    ul {
+      @extend %row;
+
+      li {
+        @extend %col-md-3;
+        @extend %col-tn-6;
+        @extend %col-xs-12;
+
+        @include respond-to-max($medium) {
+          padding-top: 20px;
+        }
+
+        @include respond-to-max($tiny) {
+          padding-top: 24px;
+        }
+
+        p {
+          @extend %almo-text-reg;
+
+          strong {
+            display: block;
+            color: var(--baseColor);
+            font-size: 44px;
+            line-height: 1.2em;
+
+            @include respond-to-max($tiny) {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

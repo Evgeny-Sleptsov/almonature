@@ -1,0 +1,167 @@
+article.almo-typical-article {
+  padding: 60px 0 90px;
+
+  @include respond-to-max($small) {
+    padding: 40px 0 60px;
+  }
+
+  @include respond-to-max($tiny) {
+    padding: 30px 0 40px;
+  }
+}
+
+.almo-typical-article {
+  @include respond-to-max($tiny) {
+    * {
+      word-break: break-word;
+    }
+  }
+
+  h1 {
+    @extend %almo-head-h1;
+    padding-bottom: 0.7em;
+  }
+  h2 {
+    @extend %almo-head-h2;
+    padding-bottom: 1em;
+  }
+  h3 {
+    @extend %almo-head-h3;
+    margin-bottom: 0.5em;
+  }
+  h4 {
+    @extend %almo-head-h4;
+    margin-bottom: 0.8em;
+  }
+  h5 {
+    @extend %almo-head-h5;
+  } 
+  p {
+    @extend %almo-text-lead;
+
+    b {
+      font-weight: 700;
+    }
+
+    & + p {
+      margin-top: 0.5em;
+    }
+    & + h3 {
+      margin-top: 1.9em; 
+    }
+    & + h4 {
+      margin-top: 1.8em;
+    }
+  }
+  a {
+    @extend %almo-link;
+  }
+
+  ul, ol {
+    li {
+      position: relative;
+      padding-left: 2em;
+      margin-bottom: 32px;
+      @extend %almo-text-lead;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        margin-right: 0.5;
+      }
+    }
+  }
+
+  ul {
+    margin-top: 32px;
+    margin-bottom: 36px;
+
+    & > li {
+      &:before {
+        top: 0;
+        content: 'c';
+        color: transparent;
+        display: block;
+        width: 1.5em;
+        line-height: inherit;
+        background-image: linear-gradient(to right, var(--red), var(--red));
+        background-position: center;
+        background-size: 100% 4px;
+        background-repeat: no-repeat;
+      }
+
+      & > ul {
+        margin-top: 24px;
+        font-size: inherit;
+        line-height: inherit;
+
+        & > li {
+          &:before {
+            top: 0;
+            content: 'c';
+            color: transparent;
+            display: block;
+            width: 1.5em;
+            line-height: inherit;
+            background-image: radial-gradient(circle at center, #303030 0, #303030 5px, rgba(0,0,0,0) 6px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: initial;
+          }
+        }
+      }
+    }
+  }
+
+  table {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+
+    overflow: hidden;
+    overflow-x: auto;
+
+    @extend %almo-text-lead;
+
+    * {
+      word-break: initial !important;
+    }
+
+    th {
+      font-size: inherit;
+      font-weight: 700;
+      text-align: left;
+
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    tr:last-child {
+      & > td {
+        border-bottom: 1px solid var(--gray-line);
+      }
+    }
+
+    th, td {
+      padding: 1.1em 10px;
+
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: list;
+
+    & > li {
+      &:before {
+        font-weight: 700;
+        counter-increment: list;
+        content: counter(list)".";
+      }
+    }
+  }
+
+  // em {
+  //   font-style: italic;
+  // }
+}

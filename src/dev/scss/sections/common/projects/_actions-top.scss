@@ -1,0 +1,31 @@
+.almo-project-actions-top {
+
+  &-sec {
+    // padding-top: 68px;
+
+    @include respond-to-max($medium) {
+      // padding-top: 30px;
+    }
+  }
+
+  &__inner {
+    padding: 56px 0 60px;
+    background-color: var(--gray-bg);
+
+    @include respond-to-max($tiny) {
+      padding: 36px 0;
+    }
+  }
+  p {
+    @extend %almo-text-lead;
+    max-width: 900px;
+
+    strong {
+      @extend %almo-text-undline;
+    }
+
+    & + p {
+      margin-top: 20px;
+    }
+  }
+}

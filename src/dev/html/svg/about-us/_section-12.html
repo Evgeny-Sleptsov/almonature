@@ -1,0 +1,44 @@
+<svg width="132" height="115" viewBox="0 0 132 115" fill="none" xmlns="http://www.w3.org/2000/svg" class="animation-roll-item animation-roll-to-hide">
+
+  <path
+    class="svg-bg-path"
+    opacity=".2" 
+    d="M110 2C112.785 61 15.002 16 15.002 75"
+    stroke="url(#paint0_linear-section-12)"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <!-- <path
+    class="clip-path-el" 
+    d="M110 2C112.785 61 15.002 16 15.002 75"
+    stroke="#F5A195"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="136"
+    stroke-dashoffset="136"
+  /> -->
+
+  <circle class="roller" cx="110" cy="2" r="12" fill="url(#ball-12)" filter="url(#shadow-12)"/>
+
+  <circle
+    class="finish-point"
+    cx="16"
+    cy="99"
+    r="14.5"
+    stroke="#EC422B"
+    stroke-width="3"
+  />
+
+  <defs>
+  <filter id="shadow-12" width="46" height="46" x="-1" y="-1">
+      @@include("./_roll-shadow.html")
+    </filter>
+    <pattern id="ball-12" class="ball-pattern" width="38" height="38">
+      @@include("./_roll-pattern.html")
+    </pattern>
+    <linearGradient id="paint0_linear-section-12" x1="37.726" y1="67" x2="37.726" y2="2" gradientUnits="userSpaceOnUse">
+      <stop offset=".746" stop-color="#F4F4F4"/>
+      <stop offset="1" stop-color="#DADADA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

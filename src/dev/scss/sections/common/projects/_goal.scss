@@ -1,0 +1,35 @@
+.almo-project-goal {
+  padding: 24px 30px 30px 82px;
+
+  @include respond-to-max($tiny) {
+    padding: 24px 14px;
+  }
+
+  .almo-editable {
+    p {
+      @extend %almo-text-lead;
+    }
+  }
+
+  .almo-head-h4 {
+    position: relative;
+    @extend %almo-text-blue;
+    margin-bottom: 8px;
+
+    @include respond-to-max($tiny) {
+      margin-bottom: 0;
+    }
+
+    .almo-icon {
+      position: absolute;
+      left: calc(-1.65em - 18px);
+      top: -4px;
+
+      @include respond-to-max($tiny) {
+        position: relative;
+        left: 0;
+        margin-right: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.almo-project-tabs {
+  margin: 34px 0;
+
+  @include respond-to-max($tiny) {
+    margin: 20px 0;
+  }
+}
+
+// .almo-project--vf .almo-project-tabs,
+// .almo-project--aifl .almo-project-tabs {
+//   @include respond-to-max($tiny) {
+//     .almo-tabs__list {
+//       // padding: 4px 0 10px;
+//     }
+//     li:first-child {
+//       display: none;
+//     }
+//   }
+// }

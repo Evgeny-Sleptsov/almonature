@@ -1,0 +1,70 @@
+.almo-checkbox {
+  font-size: 20px;
+  display: inline-block;
+  cursor: pointer;
+  color: #6DAD45;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked+span {
+      border-color: currentColor;
+      background-color: rgba(109, 173, 69, 0.1);
+    }
+
+    &:checked+span i {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1em;
+    width: 1em;
+    border: 1px solid #C8C8C8;
+    position: relative;
+    border-radius: 4px;
+    transition: border-color .25s ease-in-out, background .25s ease-in-out;
+
+    i {
+      display: block;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+  }
+}
+
+.almo-checkbox-block {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  .almo-checkbox {
+    display: flex;
+
+    &>span {
+      flex: none;
+      margin-right: 10px;
+    }
+  }
+
+  &__mes {
+    display: none;
+    padding-left: 30px;
+    color: currentColor;
+  }
+
+  &--error {
+    color: var(--red);
+
+    .almo-checkbox {
+      color: currentColor;
+    }
+
+    .almo-checkbox-block__mes {
+      display: block;
+    }
+  }
+}

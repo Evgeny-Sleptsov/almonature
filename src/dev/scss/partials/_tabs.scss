@@ -1,0 +1,109 @@
+@import '../common/scss-variables.scss';
+@import '../common/mixins.scss';
+
+.almo-tabs {
+  height: 72px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .9);
+  position: sticky;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  transform: translate3d(0,0,0);
+  z-index: 3;
+
+  @include respond-to-max($tiny) {
+    height: auto;
+    min-height: 40px;
+  }
+
+  &__list {
+    display: flex;
+    position: relative;
+    margin-left: -20px;
+
+    @include respond-to-max($tiny) {
+      margin-left: -10px;
+      margin-right: -10px;
+      padding: 5px 10px 5px 6px;
+    }
+
+    &__item {
+      padding: 0 20px;
+
+      @include respond-to-max($tiny) {
+        padding: 0;
+      }
+
+      & + li {
+        padding-left: 4px;
+      }
+    }
+  }
+
+  &__undline {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 20px;
+    margin: 0;
+    height: 6px;
+    width: 100px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--red);
+    transition: left .25s ease-in-out, width .25s ease-in-out;
+
+    @include respond-to-max($tiny) {
+      display: none;
+    }
+  }
+}
+
+.almo-tab {
+  display: block;
+  padding-bottom: 8px;
+  padding-top: 5px;
+  transition: opacity .25s ease-in-out;
+  position: relative;
+  opacity: .5;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35em;
+
+  @include fluid-type($extratiny, $small, 14px, 20px);
+
+  @include respond-to-max($tiny) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    // padding-left: 10px;
+    padding-left: 7px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 12px;
+      background-color: var(--red);
+      transition: opacity .25s ease-in-out;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.js-active {
+    opacity: 1;
+    pointer-events: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

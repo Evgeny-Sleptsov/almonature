@@ -1,0 +1,96 @@
+.almo-partner-card-sec {
+  padding-top: 0;
+
+  &:last-of-type {
+    .almo-partner-card:last-of-type {
+      background-image: none;
+    }
+  }
+}
+
+.almo-partner-card {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: linear-gradient(to right, transparent, #e4e4e4, transparent);
+  background-position: center bottom;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+
+  @include respond-from-min($small) {
+    display: flex;
+  }
+
+  &__head {
+    z-index: 0;
+    padding-top: 8px;
+    padding-bottom: 25px;
+    text-align: center;
+
+    @include respond-from-min($small) {
+      min-width: 231px;
+      width: 231px;
+      margin-right: 40px;
+    }
+  }
+
+  &__name {
+    @extend %almo-text-small;
+    padding-top: 8px;
+    opacity: 0.5;
+  }
+
+  &__content > p {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #303030;
+
+    &:last-of-type {
+      margin-bottom: 28px;
+    }
+
+    @include respond-from-min($small) {
+      font-size: 16px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 33px;
+    overflow: hidden;
+
+    .swiper-slide {
+      width: auto;
+    }
+
+    .swiper-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+    }
+
+    .swiper-pagination {
+      position: static;
+      z-index: 0;
+    }
+
+    .swiper-btn {
+      display: none;
+
+      @include respond-from-min($small) {
+        display: block;
+        height: 26px;
+      }
+    }
+
+    .almo-link {
+      font-size: 26px;
+      color: var(--black);
+
+      &.swiper-button-disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+}

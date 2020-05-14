@@ -1,0 +1,12 @@
+<feOffset result="offOut" in="SourceAlpha" dx="0" dy="0"/>
+<feGaussianBlur result="blurOut" in="offOut" stdDeviation="5"/>
+
+<feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+
+<feComponentTransfer>
+  <feFuncA type="linear" slope="0.3"/>
+</feComponentTransfer>
+<feMerge>
+  <feMergeNode/>
+  <feMergeNode in="SourceGraphic"/>
+</feMerge>

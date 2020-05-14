@@ -1,0 +1,529 @@
+@import '../../common/mixins.scss';
+@import '../../common/scss-variables.scss';
+
+.almo-subscr {
+  --mobHavHeight: 52px;
+
+  &__mob-head {
+    display: none;
+    align-items: center;
+    position: relative;
+    height: var(--mobHavHeight);
+    justify-content: center;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: calc(var(--edge-gap) * -1);
+      right: calc(var(--edge-gap) * -1);
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    @include respond-to-max($small) {
+      display: flex;
+    }
+
+    &__close {
+      font-size: 25px;
+      color: #303030;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .bg-almo {
+      font-size: 14px;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    max-width: 420px;
+
+    &.js-use-email {
+      .almo-subscr--use-soc {
+        display: none;
+      }
+
+      .almo-subscr--use-email {
+        display: block;
+      }
+    }
+
+    &.js-use-soc {
+      .almo-subscr--use-soc {
+        display: block;
+      }
+
+      .almo-subscr--use-email {
+        display: none;
+      }
+    }
+
+    &.js-focused {
+
+      .almo-subscr__email__checks,
+      .almo-subscr__email__undbtn {
+        max-height: 500px;
+      }
+    }
+
+    &>.almo-head-h3 {
+      padding-bottom: 8px;
+    }
+
+    &>.almo-text-reg {
+      padding-bottom: 0.875em;
+    }
+
+    .almo-input-block {
+      margin-bottom: 28px;
+    }
+
+    &__email-set {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-line);
+      margin-bottom: 20px;
+    }
+
+    &__checks {
+      transition: max-height 1s;
+      max-height: 0;
+      overflow: hidden;
+
+      &>ul {
+        padding-bottom: 12px;
+
+        &>li {
+          display: flex;
+          padding: 8px 0;
+
+          .almo-checkbox {
+            margin-right: 10px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .almo-btn {
+      width: 100%;
+      max-width: 100% !important;
+    }
+
+    &__undbtn {
+      padding-top: 12px;
+      opacity: .5;
+      transition: max-height 1s;
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+
+  &__soc {
+    padding: 0 55px 20px;
+
+    @include respond-to-max($tiny) {
+      padding: 0;
+    }
+
+    .almo-head-h3 {
+      padding-bottom: 1.2em;
+    }
+
+    .almo-btn.almo-btn--soc {
+      display: flex;
+      width: 100%;
+      max-width: 360px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__more {
+    max-width: 800px;
+    width: 100%;
+
+    @include respond-to-max($small) {
+      padding-top: 16px;
+    }
+
+    &__inner {
+      @include respond-to-max($small) {
+        padding-top: 16px;
+      }
+
+      &>.almo-text-lead {
+        text-align: center;
+        padding-bottom: 8px;
+        max-width: 520px;
+        margin: 0 auto;
+
+        @include respond-to-max($tiny) {
+          text-align: left;
+        }
+      }
+
+      &>.almo-text-reg {
+        text-align: center;
+        padding-bottom: 1em;
+        margin: 0 auto;
+
+        @include respond-to-max($tiny) {
+          text-align: left;
+        }
+      }
+    }
+
+
+    &__steps {
+      padding-bottom: 30px;
+
+      &__list {
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__item {
+          padding: 4px;
+        }
+      }
+
+      &__step {
+        display: block;
+        pointer-events: none;
+
+        input[type='radio'] {
+          display: none;
+
+          &:checked~span {
+            opacity: 1;
+            transform: scale(1, 1.2);
+          }
+        }
+
+        &>span {
+          width: 100px;
+          height: 8px;
+          display: block;
+          transition: opacity .15s ease-in-out, transform .15s ease-in-out;
+          background-color: var(--red);
+          opacity: .3;
+          border-radius: 10px;
+
+          @include respond-to-max($tiny) {
+            width: 85px;
+          }
+        }
+      }
+    }
+
+    &__block {
+      padding: 1em;
+      margin-left: -1em;
+      margin-right: -1em;
+      background-color: var(--gray-bg);
+      width: auto;
+      margin-bottom: 20px;
+
+      &>.almo-head-h3 {
+        padding-bottom: .7em;
+
+        @include respond-to-max($tiny) {
+          text-align: left;
+        }
+      }
+    }
+
+    &__anim,
+    &__years,
+    &__country {
+      transition: opacity .25s ease-in-out;
+      display: none;
+      opacity: 0;
+
+      &.js-showed {
+        display: block;
+        animation: moreBlockShow .5s ease-in-out forwards;
+      }
+    }
+
+    &__anim {
+      text-align: center;
+
+      &__list {
+        display: flex;
+        margin: 0 -10px;
+        width: auto;
+        flex-wrap: wrap;
+
+        &__item {
+          padding: 10px;
+          flex: 0 0 25%;
+          max-width: 25%;
+
+          @include respond-to-max($small) {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+      }
+
+      &__cart {
+        padding: 16px 8px 8px;
+        background: #E4E4E4;
+        border-radius: 6px;
+        min-height: 160px;
+        height: 100%;
+        cursor: pointer;
+        position: relative;
+        display: block;
+
+        @include respond-to-max($tiny) {
+          min-height: 136px;
+        }
+
+        input[type="checkbox"] {
+          display: none;
+
+          &:checked~span {
+            border-color: var(--red);
+
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+
+        &>span {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+          border: 2px solid rgba(#000000, 0);
+          transition: border-color .25s ease-in-out;
+          border-radius: inherit;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--red);
+            display: block;
+            width: 27px;
+            height: 27px;
+            border-radius: 0 0 0 100%;
+            transition: opacity .25s ease-in-out;
+            background-repeat: no-repeat;
+            background-size: 35% auto;
+            background-position: 70% center;
+            opacity: 0;
+            background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.733L4.5 8 9 1.5' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          }
+        }
+
+        &:hover {
+          &>span {
+            border-color: var(--red);
+          }
+        }
+
+        &__icon {
+          width: 58%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          min-height: 90px;
+          margin-bottom: 8px;
+
+          .almo-icon {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        &__text {
+          text-align: center;
+        }
+      }
+    }
+
+    &__years {
+      text-align: center;
+
+      &__list {
+        text-align: left;
+        max-height: 30vh;
+        overflow-x: auto;
+
+        @include respond-to-max($tiny) {
+          max-height: initial;
+        }
+
+        &__item {
+          display: none;
+          align-items: center;
+          justify-content: center;
+
+          @include respond-to-max($tiny) {
+            justify-content: flex-end;
+            flex-wrap: wrap;
+          }
+
+          &__l {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include respond-to-max($tiny) {
+              flex: 0 0 100%;
+              justify-content: flex-start;
+            }
+
+            &>.almo-head-h5 {
+              width: 60px;
+              padding-right: 5px;
+              height: 50px;
+              line-height: 50px;
+              align-self: flex-start;
+
+              @include respond-to-max($tiny) {
+                width: 45px;
+              }
+            }
+          }
+
+
+          &:not(:last-of-type) {
+            padding-bottom: 28px;
+          }
+
+          &__inputs {
+            &>li {
+              display: flex;
+
+              &:not(:last-of-type) {
+                padding-bottom: 5px;
+              }
+
+              label {
+                display: flex;
+                align-items: center;
+                padding-right: 18px;
+
+                @include respond-to-max($small) {
+                  padding-right: 10px;
+                }
+
+                @include respond-to-max($tiny) {
+                  &:last-of-type {
+                    padding-right: 0;
+                  }
+                }
+
+                input {
+                  width: 68px;
+                  margin-right: 8px;
+
+                  @include respond-to-max($tiny) {
+                    width: 52px;
+                    margin-right: 5px;
+                  }
+                }
+              }
+            }
+          }
+
+          button {
+            margin-left: 18px;
+            font-size: 16px;
+            font-weight: 400;
+            max-width: 200px;
+            width: 100%;
+            text-align: left;
+            height: 50px;
+            line-height: 50px;
+            align-self: flex-end;
+
+            @include respond-to-max($tiny) {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    &__country {
+      text-align: center;
+
+      .almo-input-text {
+        max-width: 320px;
+
+        @include respond-to-max($tiny) {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__done {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+
+    @include respond-to-max($small) {
+      max-width: initial;
+      padding-top: 16px;
+    }
+
+    &__inner {
+      @include respond-to-max($small) {
+        height: calc(100% - var(--mobHavHeight));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: var(--mobHavHeight);
+        align-items: center;
+      }
+    }
+
+    .almo-text-lead {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    .almo-link {
+      font-size: inherit;
+    }
+  }
+
+  &__more,
+  &__done {
+    @include respond-to-max($small) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--white);
+      padding: 0 var(--edge-gap) var(--edge-gap);
+      overflow-y: auto;
+    }
+  }
+}
+
+@keyframes moreBlockShow {
+  100% {
+    opacity: 1;
+  }
+}

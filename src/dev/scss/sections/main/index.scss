@@ -1,0 +1,62 @@
+$heroToTablet:  1000px;
+
+@import './main-page-icons';
+@import './hero';
+@import './subhero';
+@import './info-block';
+@import './quality-food';
+@import './explore';
+@import './purp-focus';
+@import './find-more';
+@import './giveback';
+@import './activity';
+@import './help';
+@import './before-footer';
+@import './slider';
+@import './subscribe-popup';
+@import './quiz-poup';
+@import './part-of-it';
+
+.almo-main  {
+  --baseColor: var(--red);
+
+  #purp-foc {
+    --top: 60px;
+
+    @include respond-to-max($small) {
+      --top: 40px;
+    }
+
+    @include respond-to-max(650px) {
+      --top: 30px;
+    }
+
+    @include respond-to-max($tiny) {
+      --top: 20px;
+    }
+  }
+
+  #giveback {
+    --top: 80px;
+  
+    @include respond-to-max($small) {
+      --top: 50px;
+    }
+  }
+
+  .almo-help-sec {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+
+    @include respond-to-max($small) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    @include respond-to-max($tiny) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+}

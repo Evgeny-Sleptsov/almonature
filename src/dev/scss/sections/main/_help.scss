@@ -1,0 +1,18 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-help-sec {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+
+  @include respond-to-max($small) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @include respond-to-max($tiny) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,16 @@
+// Media queries breakpoints
+$extratiny:     320px;
+$tiny:          576px;
+$small:         768px;
+$medium:        992px;
+$large:         1200px;
+$tablet:        1024px;
+$extraLarge:    1600px;
+
+//Sizes
+$wrap:          1075px; //1045 + paddings
+
+$path_to_img: '../images/';
+
+// settings of "include-media"
+$breakpoints: (extratiny: $extratiny, tiny: $tiny, small: $small, medium: $medium, large: $large, extralarge: $extraLarge);

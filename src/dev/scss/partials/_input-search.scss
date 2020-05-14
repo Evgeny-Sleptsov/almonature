@@ -1,0 +1,30 @@
+.almo-input-search {
+  font-size: 13px;
+  font-weight: 400;
+  height: 2.8em;
+  line-height: 2.8em;
+  padding-left: 2.4em;
+  padding-right: 1em;
+  transition: border-color .25s ease-in-out;
+  background: var(--white);
+  border: 1px solid #D7D7D7;
+  border-radius: 6px;
+  background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.293 10.728l3.444 3.536' stroke='%236DAD45' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='6.5' cy='6.5' r='4.5' stroke='%236DAD45' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 1.25em auto;
+  background-position: .8em 50%;
+  width: 100%;
+  background-repeat: no-repeat;
+
+  @include placeholder {
+    transition: opacity .25s ease-in-out;
+  }
+
+  &:hover,
+  &:not(:placeholder-shown) {
+    border-color: var(--black);
+
+    @include placeholder {
+      opacity: 0;
+    }
+  }
+}

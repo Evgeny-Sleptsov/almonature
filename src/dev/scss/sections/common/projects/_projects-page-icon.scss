@@ -1,0 +1,73 @@
+@import "./icons-variables";
+
+.bg-profit,
+%bg-profit {
+  height: 4.4em !important;
+	width: 4.4em !important;
+  background-image: $bg_profit;
+  background-size: 110%;
+  background-position: center;
+}
+
+.bg-goal,
+%bg-goal {
+  height: 2em !important;
+	width: 2em !important;
+  background-image: $bg_goal;
+}
+
+.bg_quotes,
+%bg_quotes {
+  width: 5.8em;
+  height: 5em;
+  background-image: $bg_quotes;
+}
+
+.bg_quotes-white,
+%icon_quotes-white {
+  width: 5.8em;
+  height: 5em;
+  background-image: $bg_quotes-white;
+}
+
+.bg_team,
+%icon_team {
+  width: 2.5em;
+  height: 1.4em;
+  @extend %bg_team;
+}
+
+%bg_team {
+  background-image: $bg_team;
+}
+
+.bg_speaker,
+%icon_speaker {
+  width: 2.5em;
+  height: 2.5em;
+  @extend %bg_speaker;
+}
+
+%bg_speaker {
+  background-image: $bg_speaker;
+}
+
+%bg_quotes-white {
+  background-image: $bg_quotes-white;
+}
+
+%bg_paw {
+  background-image: $bg_paw;
+}
+
+%bg_plant {
+  background-image: $bg_plant;
+}
+
+%bg_hat {
+  background-image: $bg_hat;
+}
+
+%bg_horn {
+  background-image: $bg_horn;
+}

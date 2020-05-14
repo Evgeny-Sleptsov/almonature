@@ -1,0 +1,357 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+#how-you-can-help {
+  --top: 60px;
+}
+
+.almo-help-sec {}
+
+.almo-help {
+  .almo-head-h2 {
+    padding-bottom: 10px;
+
+    color: var(--green);
+
+    & + .almo-text-lead {
+      padding-top: 10px;
+    }
+  }
+
+  &__list {
+    counter-reset: help-item; 
+    &__item {
+      padding-top: 60px;
+      padding-bottom: 54px;
+      position: relative;
+      overflow: hidden;
+      counter-increment: help-item;
+
+      @include respond-to-max($tiny) {
+        padding-top: 40px;
+        padding-bottom: 48px;
+      }
+
+      &.js-hidden {
+        @include respond-from-min($small) {
+          .almo-help__btns-list__item {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+        }
+      }
+
+      .almo-sep {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &:last-of-type {
+        .almo-sep {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+          
+    &::after {
+      content: counter(help-item);
+      @extend %almo-num;
+      display: none; 
+      position: absolute;
+      color: var(--gray-popup);
+      width: 1em;
+      right: 0;
+      top: 0px;
+      z-index: -1;
+      pointer-events: none;
+      text-align: center;
+
+      @include respond-to-max($tiny) {
+        display: block;
+      }
+    }
+
+    &__l {
+      flex: 0 0 calc(100% / 12 * 8);
+      max-width: calc(100% / 12 * 8);
+      padding-right: 20px;
+
+      @include respond-to-max(850px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+      }
+
+      .almo-head-h3 {
+        padding-bottom: 0.7em;
+      }
+
+      .almo-text-lead {
+        padding-bottom: 0.8em;
+      }
+    }
+
+    &__list {
+      @extend %row;
+
+      @include respond-to-max(850px) {
+        padding-bottom: 24px;
+      }
+
+      @include respond-to-max(500px) {
+        display: none !important;
+      }
+
+      &__item {
+        @extend %col-xs-4;
+
+        padding-top: calc(var(--col-step) / 2);
+        padding-bottom: calc(var(--col-step) / 2);
+
+        text-align: center;
+
+        .almo-icon {
+          display: block;
+          margin: 0 auto 4px;
+        }
+      }
+    }
+
+    &__r {
+      padding-left: 20px;
+      flex: 0 0 calc(100% / 12 * 4);
+      max-width: calc(100% / 12 * 4);
+
+      @include respond-to-max(850px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__btns-list {
+    @include respond-to-max(850px) {
+      display: flex;
+      justify-content: center;
+      margin: 0 -12px;
+      width: auto;
+      flex-wrap: wrap;
+    }
+
+    @include respond-to-max($tiny) {
+      margin: 0;
+    }
+
+    &__item {
+      padding-bottom: 28px;
+
+      @include respond-to-max(850px) {
+        flex: 0 0 50%;
+        padding: 16px 12px;
+      }
+
+      @include respond-to-max($tiny) {
+        padding: 8px 0;
+        flex: 0 0 100%;
+      }
+
+      &:nth-of-type(1) {
+        transition: opacity .7s, transform .5s;
+      }
+
+      &:nth-of-type(2) {
+        transition: opacity .7s .4s, transform .5s .4s;
+      }
+
+      &:nth-of-type(3) {
+        transition: opacity .7s .9s, transform .5s .9s;
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: 12px;
+    border: 2px solid #EAEAEA;
+    background-color: var(--gray-bg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    width: 100%;
+    transition: background .25s ease-in-out, border-color .25s ease-in-out;
+    text-align: left;
+
+    &.almo-disabled,
+    &[disabled] {
+      opacity: .5;
+    }
+
+    @include respond-to-max($tiny) {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    &:hover {
+      background-color: #E7E7E7;
+    }
+
+    &--for-pet {
+      .almo-icon {
+        width: 96px;
+        height: 80px;
+        margin-right: 17px;
+
+        @include respond-to-max($tiny) {
+          margin-right: 10px;
+          font-size: 17px;
+        }
+      }
+    }
+
+    &--soc {
+      .almo-icon {
+        margin-right: 9px;
+      }
+      
+      svg {
+        margin-right: 9px;
+        path {
+          transition: fill .25s ease-in-out, stroke .25s ease-in-out;
+        }
+        circle {
+          transition: stroke .25s ease-in-out;
+        }
+      }
+
+      &>span {
+        display: block;
+        flex: 1;
+        align-self: center;
+        transition: color .25s ease-in-out;
+      }
+
+      &--fb {
+        background: rgba(86, 116, 222, 0.1);
+        border: 2px solid rgba(86, 116, 222, 0.2);
+
+        &:hover {
+          background: #5674DE;
+          
+          &>span {
+            color: var(--white);
+          }
+
+          svg {
+            path.svg-facebook-area {
+              fill: var(--white);
+            }
+
+            path.svg-facebook-icon {
+              fill: #5674DE;
+            }
+          }
+        }
+      }
+
+      &--tw {
+        background: rgba(95, 197, 255, 0.1);
+        border: 2px solid rgba(95, 197, 255, 0.2);
+
+        &:hover {
+          background: #5FC5FF;
+
+          &>span {
+            color: var(--white);
+          }
+
+          svg {
+            path.svg-twitter-area {
+              fill: var(--white);
+            }
+
+            path.svg-twitter-icon {
+              fill: #5FC5FF;
+            }
+          }
+        }
+      }
+
+      &--inst {
+        background: rgba(245, 78, 168, 0.1);
+        border: 2px solid rgba(245, 78, 168, 0.1);
+
+        &:hover {
+          background: #F54EA8;
+
+          &>span {
+            color: var(--white);
+          }
+
+          svg {
+            path.svg-instagram-area {
+              fill: var(--white);
+            }
+
+            path.svg-instagram-icon {
+              fill: #F54EA8;
+            }
+          }
+        }
+      }
+
+      &--media {
+        &:hover {
+          border-color: var(--red);
+          background-color: var(--red);
+          color: var(--white);
+
+          path.svg-soc-area {
+            fill: var(--white);
+          }
+
+          path.svg-soc-icon,
+          circle.svg-soc-icon {
+            stroke: var(--red);
+          }
+        }
+      }
+
+      &--subscr {
+        &:hover {
+          background-color: #235863;
+          color: var(--white);
+          border-color: #235863;
+
+          path.svg-subscr-area {
+            fill: var(--white);
+          }
+
+          path.svg-subscr-icon {
+            stroke: #235863;
+          }
+        }
+      }
+    }
+
+    .almo-icon {
+      display: block;
+      flex: none;
+    }
+  }
+}
+
+.almo-project-aifl-help-sec {
+  padding-top: 60px;
+}

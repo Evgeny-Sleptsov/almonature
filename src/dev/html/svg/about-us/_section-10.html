@@ -1,0 +1,40 @@
+<svg width="270" height="568" fill="none" xmlns="http://www.w3.org/2000/svg" class="animation-roll-item animation-roll-to-hide">
+  
+  <path
+    class="svg-bg-path"
+    d="M186 2c36 54 82 83.24 82 150C268 419 2 434 0 566"
+    stroke="url(#paint0_linear-10)"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <!-- <path
+    class="clip-path-el"
+    d="M186 2c36 54 82 83.24 82 150C268 419 2 434 0 566"
+    stroke="#F5A195"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="690"
+    stroke-dashoffset="690"
+  /> -->
+
+  <circle 
+    class="roller"
+    cx="186"
+    cy="2"
+    r="12"
+    fill="url(#ball-10)"
+    filter="url(#shadow-10)"
+  />
+
+  <defs>
+    <linearGradient id="paint0_linear-10" x1="243.186" y1="52.167" x2="243.186" y2="548" gradientUnits="userSpaceOnUse">
+      <stop offset=".746" stop-color="#F4F4F4"/>
+    </linearGradient>
+    <filter id="shadow-10" width="46" height="46" x="-1" y="-1">
+      @@include("./_roll-shadow.html")
+    </filter>
+    <pattern id="ball-10" class="ball-pattern" width="38" height="38">
+      @@include("./_roll-pattern.html")
+    </pattern>
+  </defs>
+</svg>

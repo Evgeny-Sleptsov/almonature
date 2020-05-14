@@ -1,0 +1,34 @@
+<section class="almo-sec almo-main-hero-sec js-hidden">
+  <div class="almo-main-hero-sec__bg">
+  @@if (usa == false) {
+    <picture>
+      <source srcset="images/main/hero/bg-1000.png" media="(max-width: 1000px)">
+      <source srcset="images/main/hero/bg.png" media="(min-width: 1001px)">
+      <img src="images/main/hero/bg.png'" alt="">
+    </picture>
+  }
+  @@if (usa == true) {
+    <picture>
+      <img src="images/main/hero/bg--usa.png" alt="">
+    </picture>
+  }
+    <!-- <picture>
+      <source srcset="/images/main/hero/hqs-bg-1000.png" media="(max-width: 1000px)">
+      <source srcset="/images/main/hero/hqs-bg.png" media="(min-width: 1001px)">
+      <img src="/images/main/hero/bg.png'" alt="">
+    </picture> -->
+  </div>
+  <div class="almo-wrap almo-main-hero">
+    <div class="almo-main-hero__text">
+      <h1 class="almo-head-h1 almo-text-red almo-main-hero__text__title">
+        <span>
+          Owned by
+          <i class="almo-icon bg-paw"></i>
+        </span>
+        <span>
+          the animals
+        </span>
+      </h1>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+.almo-title-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -6px;
+  margin-right: -6px;
+  margin-bottom: -12px;
+  padding-top: 28px;
+  padding-left: 0;
+
+  @include respond-from-min($small) {
+    margin-bottom: 24px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 40px;
+  }
+
+  &__el {
+    max-width: 50%;
+    width: 266px;
+    margin-bottom: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+    @include respond-from-min($small) {
+      width: 33.3333333%;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @include respond-from-min($medium) {
+      width: 25%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #303030;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #e7e7e7;
+    }
+
+    &:active {
+      background-color: #a7a7a7;
+    }
+
+    @include respond-from-min($small) {
+      font-size: 16px;
+    }
+  }
+
+  &--second {
+    padding-top: 36px;
+
+    @include respond-from-min($small) {
+      margin-bottom: 4px;
+      padding-top: 52px;
+    }
+  }
+}

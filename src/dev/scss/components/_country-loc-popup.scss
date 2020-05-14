@@ -1,0 +1,46 @@
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+.almo-country-loc-popup {
+  position: absolute;
+  top: 40px;
+  right: 24px;
+
+  &__cont {
+    max-width: 560px;
+    min-height: auto;
+
+    @include respond-to-max($tiny) {
+      max-width: 385px;
+    }
+
+    .almo-text-reg {
+      padding-bottom: 1em;
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -10px;
+
+      .almo-btn {
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      @include respond-to-max($tiny) {
+        flex-wrap: wrap;
+        justify-content: center;
+        .almo-btn {
+          max-width: 100% !important;
+        }
+        .almo-btn:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

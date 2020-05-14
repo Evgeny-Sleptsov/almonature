@@ -1,0 +1,407 @@
+.almo-project-actions-slider {
+  position: relative;
+  padding-bottom: 68px;
+  z-index: 1;
+
+  &-sec {
+    padding: 80px 0 0;
+
+    @include respond-to-max($medium) {
+      padding-top: 44px;
+    }
+
+    @include respond-to-max(670px) {
+      padding-top: 20px;
+    }
+  }
+
+  &__text {
+    max-width: 860px;
+
+    .almo-text-lead {
+      max-width: 680px;
+    }
+
+    @include respond-to-max(1150px) {
+      max-width: calc(100vw - 300px);
+    }
+
+    @include respond-to-max(670px) {
+      max-width: initial;
+    }
+  }
+
+  .almo-head-h2 {
+    margin-bottom: 24px;
+  }
+
+  &__block {
+    position: relative;
+    max-width: 880px;
+    margin-top: -10px;
+
+    @include respond-to-max(1200px) {
+      margin-left: 50px;
+    }
+
+    @include respond-to-max(1000px) {
+      margin-right: 50px;
+    }
+
+    @include respond-to-max(850px) {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    @include respond-to-max(670px) {
+      margin-top: 10px;
+    }
+
+    .swiper-container {
+      margin: 0 calc(var(--edge-gap) * -1);
+
+      // &::after {
+      //   position: absolute;
+      //   top: 28px;
+      //   left: var(--edge-gap);
+      //   content: '';
+      //   @extend %almo-icon;
+      //   @extend %bg_quotes;
+      //   z-index: -1;
+
+      //   @include respond-to-max(1100px) {
+      //     left: var(--col-step);
+      //   }
+
+      //   @include respond-to-max(850px) {
+      //     left: var(--edge-gap);
+      //   }
+
+      //   @include respond-to-max(670px) {
+      //     display: none;
+      //   }
+      // }
+    }
+
+    &.open-slider {
+      .almo-project-actions-slider__block-toggle-button {
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .almo-project-actions-slider__block-toggle {
+        overflow: initial;
+      }
+    }
+
+    &.start-open-slider {
+      .almo-project-actions-slider__block-toggle-button {
+        max-height: 0 !important;
+        overflow: hidden !important;
+      }
+    }
+
+    &-toggle {
+      @include respond-to-max(670px) {
+        --sliderMaxHeight: 0px;
+
+        overflow: hidden;
+        max-height: var(--sliderMaxHeight);
+        transition: max-height 0.5s;
+      }
+
+      &-button {
+        max-height: 94px;
+        display: none;
+        text-align: center;
+        transition: max-height 0.15s;
+
+        button {
+          @extend %almo-text-reg;
+          padding: 4px 14px 4px 80px;
+          min-height: 60px;
+          max-width: calc(375px - var(--col-step));
+          width: 100%;
+          background-repeat: no-repeat;
+          background-position: 18px center;
+          background-color: #FFFFFF;
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          text-align: left;
+
+          span {
+            pointer-events: none;
+          }
+        }
+
+        @include respond-to-max(670px) {
+          display: block;
+        }
+      }
+    }
+
+    ul {
+      margin: 9px var(--edge-gap) 20px;
+
+      @include respond-to-max(850px) {
+        margin: 9px 0 15px;
+
+      }
+    }
+
+    li {
+      @include respond-to-max(1100px) {
+        padding: 0 var(--edge-gap);
+      }
+
+      @include respond-to-max(670px) {
+        display: flex;
+        height: auto;
+      }
+
+      &>div {
+        display: flex !important;
+        flex: 1;
+        margin: 0 auto;
+        align-items: center;
+
+        &::after {
+          position: absolute;
+          top: 28px;
+          left: 0;
+          content: '';
+          @extend %almo-icon;
+          @extend %bg_quotes;
+          z-index: -1;
+  
+          @include respond-to-max(1100px) {
+            left: var(--edge-gap);
+          }
+  
+          @include respond-to-max(670px) {
+            display: none;
+          }
+        }
+
+        @include respond-to-max(1100px) {
+          padding: 0 20px 0 0;
+        }
+
+        @include respond-to-max(670px) {
+          align-items: inherit !important;
+          padding: 16px 14px !important;
+          flex-direction: column-reverse !important;
+          background-color: #FFFFFF !important;
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1) !important;
+          border-radius: 12px !important;
+        }
+
+        quotes {
+          padding: 20px;
+          max-width: 520px;
+          @extend %almo-text-reg;
+  
+          @include respond-to-max(670px) {
+            padding: 12px 0 0 !important;
+            margin: auto;
+          }
+
+          p + p {
+            margin-top: 0.5em;
+          }
+        }
+
+        & > p {
+          @extend %almo-stylized-photo;
+  
+          span {
+            &[data-lazy-slider-src] {
+              position: relative;
+              display: block;
+              filter: blur(0);
+              transform: translate3d(0,0,0);
+              transition: filter 0.5s 0.35s;
+  
+              & > img {
+                display: block;
+              }
+  
+              &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                pointer-events: none;
+                content: '';
+                background: rgba(100, 88, 88, 0.98);
+                // transition: all 0.4s;
+              }
+  
+              &:not(.lazy-img-loaded) {
+                filter: blur(3px);
+  
+                &:after {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+  
+          @include respond-to-max(670px) {
+            transform: none !important;
+          }
+        }
+      }
+
+      
+
+      // p:first-child {
+      //   padding: 20px;
+      //   max-width: 520px;
+      //   @extend %almo-text-reg;
+
+      //   @include respond-to-max(670px) {
+      //     padding: 12px 0 0 !important;
+      //     margin: auto;
+      //   }
+      // }
+    }
+
+    .slider-pagination {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+
+      @include respond-to-max(670px) {
+        position: initial;
+        text-align: center;
+        margin: 0 !important;
+      }
+    }
+
+    .almo-btn--slider-prev,
+    .almo-btn--slider-next {
+      position: absolute;
+      top: 50%;
+
+      @include respond-to-max(850px) {
+        display: none;
+      }
+    }
+
+    .almo-btn--slider-prev {
+      left: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    .almo-btn--slider-next {
+      right: -20px;
+      transform: none;
+
+      @include respond-to-max(1300px) {
+        right: -10px;
+      }
+
+      @include respond-to-max(1000px) {
+        right: -40px;
+      }
+    }
+  }
+
+  .photo-right {
+    .almo-btn--slider-prev {
+      left: -40px;
+
+      @include respond-to-max(1300px) {
+        left: -10px;
+      }
+
+      @include respond-to-max(1100px) {
+        left: 0;
+      }
+    }
+
+    .slider-pagination {
+
+      @include respond-to-max(1100px) {
+        margin-left: 20px;
+      }
+
+      @include respond-to-max(850px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .photo-left {
+    margin-left: 50px;
+
+    .swiper-container {
+      // &:after {
+      //   left: auto;
+      //   right: var(--col-step);
+
+      //   @include respond-to-max(1100px) {
+      //     right: var(--edge-gap);
+      //   }
+
+      //   @include respond-to-max(850px) {
+      //     right: var(--edge-gap);
+      //   }
+      // }
+    }
+
+    li {
+      &>div {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding: 10px 0 0 10px;
+
+        &:after {
+          left: auto;
+          right: calc(var(--col-step) + 85px);
+  
+          @include respond-to-max(1000px) {
+            right: calc(var(--col-step) + 40px);
+          }
+
+          @include respond-to-max($small) {
+            right: 10px;
+          }
+        }
+
+        @include respond-to-max(1100px) {
+          padding: 0 0 0 10px;
+        }
+
+        quotes: {
+          padding: 20px 0 20px 35px;
+        }
+
+        // p {
+        //   &:first-child {
+        //     padding: 20px 0 20px 35px;
+        //   }
+        // }
+      }
+    }
+
+    .slider-pagination {
+      margin-left: 310px;
+
+      @include respond-to-max(1100px) {
+        margin-left: 330px;
+      }
+
+      @include respond-to-max($medium) {
+        margin-left: 320px;
+      }
+
+      @include respond-to-max(850px) {
+        margin-left: 310px;
+      }
+    }
+  }
+}

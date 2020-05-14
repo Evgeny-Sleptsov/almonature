@@ -1,0 +1,39 @@
+.almo-stylized-photo,
+%almo-stylized-photo {
+  padding: 7px 7px 10px;
+  border-radius: 12px;
+  width: 266px;
+  flex: none;
+  text-align: center;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+  @include respond-to-max(670px) {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    padding: 0 0 5px;
+    width: 100%;
+  }
+  
+  img {
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+  }
+  
+  strong {
+    display: block;
+    @extend .almo-head-h5;
+    line-height: 1;
+  }
+  
+  small {
+    @extend .almo-text-small;
+    line-height: 1;
+    color: #AAAAAA;
+  }
+}

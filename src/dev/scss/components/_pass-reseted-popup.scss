@@ -1,0 +1,28 @@
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+.almo-pass-reseted-popup {
+  .almo-popup__cont {
+    max-width: 380px;
+  }
+
+  .almo-btn {
+    width: 100%;
+  }
+
+  @include respond-to-max($small) {
+    display: none !important;
+  }
+}
+
+.almo-pass-reseted {
+  text-align: center;
+  
+  &>.almo-icon {
+    margin-bottom: 26px;
+  }
+
+  &>.almo-head-h3 {
+    padding-bottom: 10px;
+  }
+}

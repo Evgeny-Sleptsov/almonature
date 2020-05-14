@@ -1,0 +1,157 @@
+@import '../../common/scss-variables.scss';
+@import '../../common/mixins.scss';
+
+.almo-main-proj-sec {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include respond-to-max($small) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include respond-to-max($tiny) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+.almo-main-proj {
+
+  &.js-hidden {
+    .almo-main-proj__list__item {
+      opacity: 0;
+      transform: translateY(50px);
+
+      @include respond-to-max($tiny) {
+        transform: none;
+      }
+    }
+  }
+
+  .almo-head-h2 {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+
+  .almo-text-lead {
+    text-align: center;
+    padding-bottom: 1em;
+
+    @include respond-to-max($tiny) {
+      padding-bottom: 8px;
+    }
+  }
+
+  .swiper-container {
+    overflow: initial;
+    @include respond-to-max($tiny) {
+      overflow: hidden;
+      margin: 0 calc(var(--edge-gap) * -1);
+    }
+  }
+
+  &__list {
+    
+    &.swiper-wrapper {
+      @extend %row;
+      justify-content: center;  
+    }
+
+    @include respond-to-max($tiny) {
+      margin: 0 !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+    }
+
+    &__item {
+      @extend %col-sm-4;
+      @extend %col-xs-12;
+
+      height: auto;
+
+      padding-top: calc(var(--col-step) / 2);
+      padding-bottom: calc(var(--col-step) / 2);
+
+      @include respond-to-max($tiny) {
+        transition: none !important;
+      }
+
+      &:nth-of-type(1) {
+        transition: opacity 1s , transform 1s ;
+      }
+
+      &:nth-of-type(2) {
+        transition: opacity 1s .5s , transform 1s .5s ;
+      }
+
+      &:nth-of-type(3) {
+        transition: opacity 1s 1s , transform 1s 1s ;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    min-height: 300px;
+
+    span[data-lazy-src] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, .6);
+    }
+
+    .almo-head-h3 {
+      padding-bottom: 1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .almo-text-reg {
+      position: relative;
+      z-index: 1;
+      padding-top: 1.25em;
+      margin-top: auto;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3.3em;
+        border-top: 2px solid var(--orange);
+        pointer-events: none;
+      }
+    }
+  }
+}

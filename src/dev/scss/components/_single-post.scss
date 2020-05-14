@@ -1,0 +1,184 @@
+.single-post {
+    overflow-x: hidden;
+    main >*:not(.crp_related):not(.post-title):not(.perfect-alchemy-sec):not(.animal-slider-sec):not(.author-sec):not(.industrialized-block):not(.predators):not(.great-birds-sec):not(.figure-img):not(.project-report-sec) {
+        a {
+            color: var(--blue) !important;
+            text-decoration: none !important;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.35em;
+            position: relative;
+            transition: color .25s ease-in-out;
+            vertical-align: baseline;
+            &:hover {
+                color: #367F8F !important;
+            }
+        }
+    }
+    main {
+        font-size: 20px !important;
+        letter-spacing: 0.05px !important;
+        line-height: 36px !important;
+        text-align: left !important;
+        max-width: 960px;
+        overflow: visible;
+        width: 100% !important;
+        padding-left: var(--edge-gap);
+        padding-right: var(--edge-gap);
+        padding-bottom: 40px;
+        margin: 0 auto !important;
+    p {
+        margin: 0 0 10px;
+    }
+    img {
+        //width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+        }
+    }
+    .h1, .h2, .h3, h1, h2, h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    ~ h2 > *,
+      h2 > *,
+      h3 > *,
+      h4 > * {
+        font-weight: 600 !important;
+        }
+    }
+    .wp-caption {
+        max-width: 100%;
+        @media only screen and (max-width: 767px) {
+            min-width: 100%;
+        }
+    }
+    .full-size {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #ez-toc-container {
+        width: 100% !important;
+    }
+    .gallery-item {
+        float: left;
+        margin: 0 0 28px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        //height: 100%;
+    }
+    .gallery-caption {
+        font-size: 15px;
+    }
+    .gallery img {
+        padding: 4px;
+    }
+    .alignright {
+        float: right;
+        text-align: right;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+    .alignleft {
+        float: left;
+        text-align: left;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+    a.alignright, img.alignright, .wp-caption.alignright {
+        margin: 0 0 24px 24px;
+        @media only screen and (max-width: 767px) {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+    a.alignleft, img.alignleft, .wp-caption.alignleft {
+        margin: 24px 24px 0 0;
+        @media only screen and (max-width: 767px) {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+    img.centered, .aligncenter {
+        display: block;
+        margin: 0 auto 24px;
+        max-width: 100%;
+    }
+    .gallery-columns-2 {
+        display: flex;
+        .gallery-item {
+            width: 50%;
+        }
+        .gallery-icon {
+            height: 100%;
+        }
+        @media only screen and (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            .gallery-item {
+                width: 100% !important;
+            }
+        }
+    }
+    .gallery-columns-3 {
+        display: flex;
+        .gallery-item {
+            width: 33.3333333%;
+        }
+        .gallery-icon {
+            height: 100%;
+        }
+    @media only screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        .gallery-item {
+            width: 100% !important;
+        }
+    }
+    }
+    .crp_related > ul {
+        display: flex !important;
+        width: 100%;
+        justify-content: center;
+    }
+    .crp_related img {
+        width: 100% !important;
+    }
+    .crp_related h3 {
+        text-align: center;
+    }
+    u {
+        background-image: none !important;
+    }
+    .post-title {
+        display: block;
+        position: relative;
+        font-weight: 700 !important;
+        margin: 10px auto;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 40px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            background-color: #272727;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 25px;
+        }
+    }
+}

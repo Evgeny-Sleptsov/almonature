@@ -1,0 +1,36 @@
+.tns {
+  &-outer {
+    position: relative;
+
+    [data-action="stop"] {
+      display: none;
+    }
+  }
+
+  &-nav {
+    position: absolute;
+    bottom: 10px;
+  }
+
+  &-controls {
+    font-size: 20px;
+
+    button {
+      position: absolute;
+      top: calc(50% - 1.5em);
+      @extend %almo-btn--slider;
+    }
+
+    [data-controls="prev"] {
+      left: -20px;
+      transform: translateX(-100%);
+
+      @extend %almo-btn--slider-prev;
+    }
+
+    [data-controls="next"] {
+      right: -20px;
+      transform: translateX(100%);
+    }
+  }
+}

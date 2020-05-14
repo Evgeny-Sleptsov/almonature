@@ -1,0 +1,47 @@
+<div class="almo-new-pass">
+  <form>
+    <h4 class="almo-head-h4 almo-new-pass__title">
+      Use your code to change the password
+    </h4>
+
+    <p class="almo-text-reg">
+      Enter the verification code from the email we’ve sent you and create new
+      password.
+    </p>
+
+    <label class="almo-input-block">
+      <p class="almo-text-reg">Verification code</p>
+      <input type="text" name="code" class="almo-input-text" placeholder=" " />
+      <p class="almo-text-small almo-input-block__mes">
+        Something is wrong with the email. Please, correct.
+      </p>
+    </label>
+
+    <label class="almo-input-block">
+      <p class="almo-text-reg">Password</p>
+      <p class="almo-input-container">
+        <input
+          type="password"
+          name="password"
+          class="almo-input-text"
+          placeholder=" "
+          required=""
+        />
+        <button
+          type="button"
+          class="almo-input-switch-pass js-switch-visible-password"
+          onclick="inputUtils.togglePassVisible(event)"
+        >
+          <i>
+            @@include("../../svg/eyes.html")
+          </i>
+        </button>
+      </p>
+      <p class="almo-text-small almo-input-block__mes">Fill this field</p>
+    </label>
+
+    <button type="submit" class="almo-btn">
+      <span>Set up new password</span>
+    </button>
+  </form>
+</div>

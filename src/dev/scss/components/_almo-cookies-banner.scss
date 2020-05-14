@@ -1,0 +1,60 @@
+.almo-cookies-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--black);
+  transform: translate3d(0,0,0);
+  z-index: 40;
+  transition: transform 0.4s, opacity 0.3s 0.2s;
+
+  &.almo-cookie-banner--hide {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    pointer-events: none;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    max-width: 1445px;
+    margin: 0 auto;
+    padding: 28px 40px;
+    color: var(--white);
+
+    @include respond-to-max($large) {
+      max-width: $wrap;
+      padding: 20px var(--edge-gap);
+    }
+
+    @include respond-to-max($tiny) {
+      display: block;
+    }
+
+    a {
+      color: var(--orange);
+      font-weight: 700;
+
+      &:hover {
+        filter: grayscale(20%);
+      }
+    }
+  }
+  &__l {
+    flex: 1;
+  }
+  &__r {
+    padding-left: 40px;
+    flex: none;
+
+    @include respond-to-max($tiny) {
+      padding-left: 0;
+      padding-top: 20px;
+      text-align: center;
+    }
+    
+    .almo-btn {
+      min-width: 120px;
+    }
+  }
+}

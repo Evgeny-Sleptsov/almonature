@@ -1,0 +1,276 @@
+@import '../common/scss-variables.scss';
+@import '../common/mixins.scss';
+
+.almo-header {
+
+  @include respond-to-max($small) {
+    display: none;
+  }
+
+  &__top {
+    background-color: var(--gray-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 34px;
+    padding-right: 30px;
+    padding-left: 40px;
+
+    &__l {
+      .almo-soc {
+        font-size: 10px;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1.8em;
+      font-weight: 400;
+      margin: 0 -20px;
+
+      &>li {
+        padding: 0 20px;
+        position: relative;
+        
+        a {
+          transition: opacity .25s ease-in-out;
+        }
+
+        button {
+          font-size: inherit;
+          transition: opacity .25s ease-in-out;
+          &.js-opened {
+            .bg-arrow {
+              transform: rotate(180deg);
+              opacity: 0.5;
+            }
+          }
+
+          .bg-search {
+            margin-right: 5px;
+          }
+
+          .bg-arrow {
+            margin-left: 5px;
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+          }
+        }
+
+        button,
+        a {
+          &:hover {
+            opacity: .8;
+          }
+        }
+
+        #country-search {
+          position: absolute;
+          top: 100%;
+          width: 280px;
+          opacity: 0;
+          transition: opacity 0.25s ease-in-out;
+          right: 0;
+          pointer-events: none;
+          z-index: 2;
+
+          .almo-input-search {
+            margin-bottom: 12px;
+          }
+
+          &.js-opened {
+            opacity: 1;
+            pointer-events: auto;
+          }
+
+          ul {
+            li {
+              padding: 4px 0;
+              transition: background .25s ease-in-out;
+
+              &:hover {
+                background-color: var(--gray-bg);
+              }
+
+              .almo-icon {
+                margin-right: 9px;
+              }
+            }
+          }
+        }
+
+        #lang-choose {
+          position: absolute;
+          pointer-events: none;
+          top: 100%;
+          width: 200px;
+          opacity: 0;
+          transition: opacity 0.25s ease-in-out;
+          max-height: 250px;
+          overflow-y: auto;
+          right: 0;
+          padding: 0;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+
+          &::after,
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 40px;
+            pointer-events: none;
+          }
+
+          &::before {
+            top: 0;
+            background-image: linear-gradient(to bottom, var(--white) 0%, rgba(255,255,255, 0) 100%);
+          }
+
+          &::after {
+            bottom: 0;
+            background-image: linear-gradient(to top, var(--white) 0%, rgba(255,255,255, 0) 100%);
+          }
+
+          &>div {
+            flex: 1;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 1.2em;
+            padding-bottom: 1.2em;
+            overflow-y: auto;
+          }
+
+          &.js-opened {
+            opacity: 1;
+            pointer-events: auto;
+          }
+
+          ul>li>a {
+            display: block;
+            padding: 5px 20px 5px 8px;
+            transition: background 0.25s ease-in-out;
+            background-color: var(--white);
+            display: block;
+
+            &.almo-disable{
+              color: #acacac;
+              position: relative;
+
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3.5 3 5-6' stroke='%236DAD45' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+                width: 10px;
+                height: 8px;
+                right: 0;
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+              }
+            }
+
+            &:hover {
+              background-color: var(--gray-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__main {
+    @extend %container-fluid;
+    background-color: var(--white);
+    height: 76px;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 40px;
+    position: relative;
+
+    @extend %row;
+
+    &__nav {
+      &>ul {
+        display: flex;
+        align-items: center;
+        margin: 0 -10px;
+        width: auto;
+
+        &>li {
+          margin: 0 10px;
+          position: relative;
+
+          &:first-of-type {
+            position: absolute;
+            left: 40px;
+            margin: 0;
+
+            @include respond-to-max(1400px) {
+              position: static;
+              left: initial;
+            }
+          }
+
+          &>a.almo-disable {
+            font-weight: 700;
+          }
+
+          & a {
+            display: block;
+            transition: opacity 0.25s;
+          }
+
+          &>ul {
+            position: absolute;
+            opacity: 0;
+            width: max-content;
+            z-index: 1;
+            font-size: inherit;
+            top: 100%;
+            pointer-events: none;
+            transition: opacity 0.25s ease-in-out;
+
+            @include respond-to-max($medium) {
+              right: 0;
+              left: auto;
+            }
+
+            &>li {
+              padding: 4px 0;
+
+              &>a {
+                &.almo-disable {
+                  font-weight: 600;
+                }
+
+                &:hover {
+                  opacity: .8;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            &>a {
+              opacity: .8;
+            }
+
+            &>ul {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

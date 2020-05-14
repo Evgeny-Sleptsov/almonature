@@ -1,0 +1,87 @@
+.tabs-controll {
+  display: flex;
+
+  &--hero {
+    position: relative;
+    margin-top: -43px;
+    padding-bottom: 12px;
+
+    @media only screen and (min-width: $tiny) {
+      margin-top: -52px;
+    }
+  }
+
+  li  {
+    padding-right: 16px;
+  }
+
+  label {
+    display: block;
+
+    & > span {
+      display: block;
+      width: 100%;
+      color: currentColor;
+      border-bottom: 4px solid currentColor;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    & > input[type="radio"] {
+      display: none;
+
+      &:checked + span {
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &--hero label {
+    & > span {
+      border-bottom-color: transparent;
+    }
+
+    & > input[type="radio"]:checked + span {
+        border-bottom-color: var(--red);
+    }
+  }
+}
+
+.tabs-link {
+  display: block;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  opacity: 0.5;
+  color: currentColor;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.tab-active {
+    border-bottom-color: var(--red);
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+.tabs-item {
+  width: 100%;
+  height: 100%;
+  display: none;
+  animation: showItemPlace 0.4s;
+
+  &.tab-active {
+    display: block;
+  }
+}
+
+@keyframes showItemPlace {
+  from { opacity: 0; filter: blur(4px); }
+  to { opacity: 1; filter: blur(0px); }
+}

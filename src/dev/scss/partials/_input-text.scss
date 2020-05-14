@@ -1,0 +1,183 @@
+@import '../common/mixins.scss';
+@import '../common/scss-variables.scss';
+
+.almo-input-text {
+  font-size: 16px;
+  width: 100%;
+  font-weight: 400;
+  background-color: var(--white);
+  border: 1px solid #D7D7D7;
+  border-radius: 6px;
+  transition: border-color .25s ease-in-out;
+  height: 3.125em;
+  line-height: 3.125em;
+  padding-left: .875em;
+  padding-right: .875em;
+  caret-color: var(--black);
+
+  @include respond-to-max($tiny) {
+    font-style: 14px;
+  }
+
+  @include placeholder {
+    transition: opacity .25s ease-in-out;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: var(--black);
+
+    @include placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.almo-input-block {
+  display: inline-block;
+  font-size: 20px;
+  min-height: 3.8em;
+  width: 100%;
+  position: relative;
+  padding-top: 1.4em;
+  padding-bottom: 1em;
+
+  &.pass-visible {
+    .almo-input-container {
+      .closed-eye {
+        display: none;
+      }
+
+      .opened-eye {
+        display: block;
+      }
+    }
+  }
+
+  .almo-input-container {
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translate3d(0, -50%, 0);
+      transition: all 0.2s;
+
+      i {
+        pointer-events: none;
+        display: block;
+        line-height: 0;
+      }
+
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+
+    .opened-eye {
+      display: none;
+    }
+
+    .closed-eye {
+      display: block;
+    }
+  }
+
+  .almo-input-switch-pass {
+    height: 1.4em;
+    width: 1.4em;
+    font-size: 20px;
+
+    svg {
+      height: 100%;
+    }
+  }
+
+  .almo-text-reg {
+    font-size: 14px;
+  }
+
+  input {
+    @include placeholder {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  input {
+
+    &:not(:placeholder-shown)~label>span,
+    &:focus~label>span {
+      transform: translate3d(0, -2.3em, 0);
+      padding-left: 0;
+      opacity: 1;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.8em;
+    pointer-events: none;
+    color: var(--black);
+
+    &>span {
+      // width: max-content;
+      font-size: 16px;
+      height: 3.125em;
+      line-height: 3.125em;
+      padding-left: .875em;
+      padding-right: .875em;
+      white-space: nowrap;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      opacity: 0.5;
+      transition: color .15s ease-in-out, transform .15s ease-in-out, padding-left .15s ease-in-out, top .15s ease-in-out, opacity .15s ease-in-out;
+      transform-origin: left;
+    }
+  }
+
+  &__mes {
+    display: none;
+    color: currentColor;
+  }
+
+  &--error {
+    color: var(--red);
+
+    label {
+      color: currentColor;
+    }
+
+    .almo-input-block__mes {
+      display: block;
+    }
+  }
+
+  &--centered {
+    input {
+      text-align: center;
+
+      &:not(:placeholder-shown)~label>span,
+      &:focus~label>span {
+        transform: translate3d(-50%, -2.3em, 0) scale(0.8);
+      }
+    }
+
+    label {
+      &>span {
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        transform-origin: center;
+      }
+
+      &>p {
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+  }
+}
